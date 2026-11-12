@@ -2,7 +2,7 @@
 
 Static website for **EBiM-Lite 2026**, the Embodied Bimanual Manipulation Competition (dual SO-101 adaptation).
 
-## Pages
+## Pages (English at root, Traditional Chinese in `zh-tw/`)
 - `index.html`: overview, stages, tracks, platform, important dates, organizers, registration
 - `competition.html`: rules, the three tracks and their scoring, platform specs, arena, validation sites, participation
 - `resources.html`: NVIDIA DLI courses and computing resources
@@ -18,5 +18,4 @@ python3 -m http.server 8000
 
 ## TODO
 - Registration link, contact email, organizers and partner logos
-- Figures for the tracks and the arena
-- Traditional Chinese version
+- Keep `zh-tw/` in sync when editing English pages

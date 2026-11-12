@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>學習與算力 · EBiM-Lite 2026</title>
+  <meta name="description" content="EBiM-Lite 2026 隊伍可使用的訓練課程與算力資源。" />
+  <link rel="icon" href="../img/favicon.svg" type="image/svg+xml" />
+  <link rel="alternate" hreflang="en" href="https://casear.github.io/ebim-lite-2026/resources.html" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://casear.github.io/ebim-lite-2026/zh-tw/resources.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <script src="../js/main.js" defer></script>
+</head>
+<body data-page="resources">
+  <nav class="nav" id="site-nav"></nav>
+
+  <header class="hero small">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">首頁</a> / 學習與算力</div>
+      <h1>邊學邊賽：<span class="grad">贊助的學習與算力資源</span></h1>
+      <p class="subtitle">每隊都有學習教材與 GPU 時數；入選隊伍還會拿到專屬硬體與真實機器人。</p>
+      <div class="toc">
+        <a href="#courses">訓練課程</a>
+        <a href="#compute">算力資源</a>
+        <a href="#software">軟體工具</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- COURSES -->
+  <section id="courses">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="kicker">NVIDIA DLI 課程</div>
+        <h2>Stage I 參賽者的訓練課程</h2>
+        <p>自學課程與講師帶領的工作坊，內容涵蓋機器人模擬、合成資料、OpenUSD 與機器人學習。</p>
+      </div>
+      <div class="table-wrap reveal">
+        <table>
+          <thead><tr><th>課程代碼</th><th>課程名稱</th><th>費用</th><th>時長</th><th>形式</th></tr></thead>
+          <tbody>
+            <tr><td>S-OV-35</td><td>A Beginner's Guide to Autonomous Robots</td><td class="price-free">免費</td><td>1 小時</td><td>自學</td></tr>
+            <tr><td>S-OV-37+V1</td><td>Generating High-Quality Motion Data for Robotics With MobilityGen</td><td class="price-free">免費</td><td>1.5 小時</td><td>自學</td></tr>
+            <tr><td>S-OV-39+V1</td><td>Software-in-the-Loop Testing for Robots With OpenUSD, Isaac Sim, and ROS</td><td class="price-free">免費</td><td>2 小時</td><td>自學</td></tr>
+            <tr><td>S-OV-15+V1</td><td>Fundamentals of Working With OpenUSD</td><td class="price-free">免費</td><td>2 小時</td><td>自學</td></tr>
+            <tr><td>S-OV-57</td><td>From Perception to Prediction: Developing Physical AI with Cosmos 3</td><td>US$30</td><td>2 小時</td><td>自學</td></tr>
+            <tr><td>S-OV-41</td><td>Accelerating ROS 2 Workloads With NVIDIA GPU-Powered Libraries and AI Models</td><td>US$30</td><td>2 小時</td><td>自學</td></tr>
+            <tr><td>C-OV-07+V1</td><td>How to Simulate, Train, Validate, and Deploy an End-to-End Robotics Workflow With NVIDIA Isaac</td><td>—</td><td>8 小時</td><td>講師帶領</td></tr>
+            <tr><td>X-OV-51+V1</td><td>Accelerating Robot Learning With Isaac Lab and Newton</td><td>—</td><td>2 小時</td><td>講師帶領</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPUTE -->
+  <section class="alt" id="compute">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="kicker">算力資源</div>
+        <h2>各階段的 GPU 時數與硬體</h2>
+      </div>
+      <div class="grid g2">
+        <div class="card reveal">
+          <span class="tag">Phase I &amp; II · 2026/12 – 2027/03</span>
+          <h3>25+ 隊 · 模擬賽</h3>
+          <div class="table-wrap" style="margin-top:12px;box-shadow:none">
+            <table>
+              <thead><tr><th>資源</th><th>每隊配額</th></tr></thead>
+              <tbody>
+                <tr><td>NVIDIA L40</td><td>120 小時</td></tr>
+                <tr><td>NVIDIA A100</td><td>100 小時</td></tr>
+                <tr><td>NVIDIA H100</td><td>50 小時</td></tr>
+                <tr><td>Brev 額度</td><td>供學習與有限度的模型訓練</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card reveal">
+          <span class="tag green">Phase III · 2027/03 – 05</span>
+          <h3>約 10 支入選隊伍 · 實機賽</h3>
+          <div class="table-wrap" style="margin-top:12px;box-shadow:none">
+            <table>
+              <thead><tr><th>資源</th><th>每隊配額</th></tr></thead>
+              <tbody>
+                <tr><td>DGX Spark／RTX 工作站</td><td>出借 40 天</td></tr>
+                <tr><td>NVIDIA L40</td><td>120 小時</td></tr>
+                <tr><td>NVIDIA A100</td><td>100 小時</td></tr>
+                <tr><td>NVIDIA H100</td><td>50 小時</td></tr>
+                <tr><td>實體機器人</td><td>SO-101 手臂 + TurtleBot 4</td></tr>
+                <tr><td>Jetson AGX Thor</td><td><span class="tag amber">待確認</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOFTWARE -->
+  <section id="software">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="kicker">軟體工具</div>
+        <h2>你會用到的工具</h2>
+      </div>
+      <div class="grid g4">
+        <div class="card reveal"><div class="icon">🧪</div><h3>Isaac Sim</h3><p>以物理為基礎模擬場地與機器人。</p></div>
+        <div class="card reveal"><div class="icon">🧠</div><h3>Isaac Lab</h3><p>用來訓練與評測策略的機器人學習框架。</p></div>
+        <div class="card reveal"><div class="icon">🦾</div><h3>LeRobot</h3><p>SO-101 的開源工具，用於資料收集與策略部署。</p></div>
+        <div class="card reveal"><div class="icon">🧭</div><h3>ROS 2</h3><p>TurtleBot 4 的導航與系統整合。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="site-footer"></footer>
+</body>
+</html>

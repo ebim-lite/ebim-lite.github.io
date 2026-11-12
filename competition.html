@@ -6,6 +6,8 @@
   <title>Competition · EBiM-Lite 2026</title>
   <meta name="description" content="EBiM-Lite 2026 tracks, scoring rules, robot platform and task arena." />
   <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
+  <link rel="alternate" hreflang="en" href="https://casear.github.io/ebim-lite-2026/competition.html" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://casear.github.io/ebim-lite-2026/zh-tw/competition.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -62,9 +64,8 @@
             <li>Route the cable through the given fixture configuration, in the specified sequence and direction</li>
             <li>Only full autonomy is evaluated: no teleoperation</li>
             <li>60-minute time limit per attempt</li>
+            <li>The task board is scaled down from the full EBiM version to fit the SO-101 workspace</li>
           </ul>
-        </div>
-        <div>
           <h4>Scoring</h4>
           <div class="formula">Completion Rate = Prefix ÷ Total
             <small>Prefix = number of consecutive correct fixtures counted from the start</small></div>
@@ -73,6 +74,14 @@
             <li><b>Tie-breaker:</b> completion time</li>
           </ul>
           <div class="callout">A mistake breaks the prefix: fixtures routed correctly after the first error do not count.</div>
+        </div>
+        <div>
+          <figure class="fig"><img src="img/track1-cable-routing.jpg" alt="Dual SO-101 robot routing a red cable on a fixture board" loading="lazy" /><figcaption>Cable routing on the EBiM-Lite platform</figcaption></figure>
+          <div class="task-figs">
+            <figure class="fig contain"><img src="img/track1-board.jpg" alt="Fixture board layout" loading="lazy" /><figcaption>Fixture board (ManipulationNet)</figcaption></figure>
+            <figure class="fig contain"><img src="img/track1-sim.jpg" alt="Cable routing path in Isaac Sim" loading="lazy" /><figcaption>Routing path in Isaac Sim</figcaption></figure>
+            <figure class="fig wide"><img src="img/track1-fixtures.png" alt="Three fixture types: clip, spool and slot" loading="lazy" style="padding:8px" /><figcaption>Fixture types</figcaption></figure>
+          </div>
         </div>
       </div>
 
@@ -88,8 +97,6 @@
             <li>Keep the correct orientation: a wrong orientation scores 0</li>
             <li>Placement accuracy is scored by IoU (0.0 – 1.0)</li>
           </ul>
-        </div>
-        <div>
           <h4>Scoring</h4>
           <div class="formula">Score = P × O × IoU
             <small>Pick success (0/1) × Orientation correct (0/1) × IoU (0–1)</small></div>
@@ -99,47 +106,69 @@
             <li><b>Tie-breaker:</b> completion time</li>
           </ul>
         </div>
+        <div>
+          <figure class="fig"><img src="img/track2-thermal-pad.jpg" alt="Robot picking a thermal pad next to three memory modules" loading="lazy" /><figcaption>Thermal pad dispenser and three candidate memory modules</figcaption></figure>
+          <div class="task-figs">
+            <figure class="fig contain"><img src="img/track2-sim.jpg" alt="Simulated thermal pad dispenser and memory module" loading="lazy" /><figcaption>Simulation assets</figcaption></figure>
+            <figure class="fig contain"><img src="img/track2-pad-deform.png" alt="Deformable thermal pad simulation" loading="lazy" /><figcaption>Deformable pad model</figcaption></figure>
+          </div>
+        </div>
       </div>
 
-      <div class="task reveal" id="track3">
-        <div>
-          <span class="tag">Track 3</span><span class="tag green">Long-Horizon Embodied Manipulation</span>
-          <h3>Service Robot Challenge</h3>
-          <p class="lead">A full service cycle across the Kitchen, Dining and Garbage Collection areas, using a cup, a bowl of coffee beans and a spoon.</p>
-          <h4>Stage 1: Table Setup (3 pts)</h4>
-          <ul>
-            <li>Transport the cup, the bowl (with coffee beans) and the spoon from the Kitchen to the Dining Area</li>
-            <li>Three randomly assigned targets: one for the cup, and spots next to the robot head for the bowl and spoon</li>
-            <li>The stage is complete when every object sits at its assigned location</li>
-          </ul>
-          <h4>Stage 2: Bean Recovery (4 pts)</h4>
-          <ul>
-            <li>Transfer the coffee beans from the bowl into the recycling container in the Garbage Collection Area</li>
-            <li>The container sits on a scale: Recovery Ratio = recovered mass ÷ original mass</li>
-            <li>Points are proportional: 100% → full points, 90% → 90%, 80% → 80%</li>
-          </ul>
-          <h4>Stage 3: Cleanup (3 pts)</h4>
-          <ul>
-            <li>Return the cup, bowl and spoon to the Kitchen Area</li>
-            <li>Place each one inside the sink region, the black rectangle on the countertop</li>
-            <li>1 point per object inside the sink region</li>
-          </ul>
-        </div>
-        <div>
-          <h4>Points breakdown (max 10)</h4>
-          <div class="score-bar">
-            <div style="flex:3">Setup · 3</div>
-            <div style="flex:4">Bean Recovery · 4</div>
-            <div style="flex:3">Cleanup · 3</div>
+      <div class="task reveal" id="track3" style="grid-template-columns:1fr">
+        <div class="grid g2" style="gap:40px">
+          <div>
+            <span class="tag">Track 3</span><span class="tag green">Long-Horizon Embodied Manipulation</span>
+            <h3>Service Robot Challenge</h3>
+            <p class="lead">A full service cycle (table setup → bean recovery → cleanup) across the Kitchen, Dining and Garbage Collection areas, using a cup, a bowl of coffee beans and a spoon.</p>
+            <h4>Points breakdown (max 10)</h4>
+            <div class="score-bar">
+              <div style="flex:3">Setup · 3</div>
+              <div style="flex:4">Bean Recovery · 4</div>
+              <div style="flex:3">Cleanup · 3</div>
+            </div>
+            <h4>Ranking priority</h4>
+            <ol class="rank-list">
+              <li>Highest completed stage</li>
+              <li>Total score</li>
+              <li>Completion time</li>
+            </ol>
+            <div class="callout"><b>Example:</b> a team that finishes Stage 2 ranks above a team that finishes only Stage 1,
+              even if the second team has more total points.</div>
           </div>
-          <h4>Ranking priority</h4>
-          <ol class="rank-list">
-            <li>Highest completed stage</li>
-            <li>Total score</li>
-            <li>Completion time</li>
-          </ol>
-          <div class="callout"><b>Example:</b> a team that finishes Stage 2 ranks above a team that finishes only Stage 1,
-            even if the second team has more total points.</div>
+          <figure class="fig"><img src="img/arena-overview.jpg" alt="Overview of the service arena with kitchen, dining and garbage areas" loading="lazy" /><figcaption>Service arena: Kitchen, Dining and Garbage Collection areas</figcaption></figure>
+        </div>
+        <div class="stage-figs">
+          <div class="card">
+            <div class="track-img"><img src="img/track3-stage1.jpg" alt="Stage 1: table setup" loading="lazy" /></div>
+            <span class="tag">Stage 1 · 3 pts</span>
+            <h3>Table Setup</h3>
+            <ul>
+              <li>Transport the cup, the bowl (with coffee beans) and the spoon from the Kitchen to the Dining Area</li>
+              <li>Three randomly assigned targets: one for the cup, and spots next to the robot head for the bowl and spoon</li>
+              <li>Complete when every object sits at its assigned location</li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="track-img"><img src="img/track3-stage2.jpg" alt="Stage 2: pouring coffee beans into a container on a scale" loading="lazy" /></div>
+            <span class="tag green">Stage 2 · 4 pts</span>
+            <h3>Bean Recovery</h3>
+            <ul>
+              <li>Transfer the coffee beans from the bowl into the recycling container in the Garbage Collection Area</li>
+              <li>The container sits on a scale: Recovery Ratio = recovered mass ÷ original mass</li>
+              <li>Proportional points: 100% → full, 90% → 90%, 80% → 80%</li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="track-img"><img src="img/track3-stage3.jpg" alt="Stage 3: returning utensils to the sink" loading="lazy" /></div>
+            <span class="tag amber">Stage 3 · 3 pts</span>
+            <h3>Cleanup</h3>
+            <ul>
+              <li>Return the cup, bowl and spoon to the Kitchen Area</li>
+              <li>Place each one inside the sink region, the black rectangle on the countertop</li>
+              <li>1 point per object inside the sink region</li>
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -155,15 +184,18 @@
         <p>Two SO-ARM101 arms on a TurtleBot 4. Open-source hardware and software lower the barrier for university teams,
           and the compact footprint fits the 100 cm aisles and 30 cm tables of the EBiM-Lite arena.</p>
       </div>
-      <div class="spec reveal">
-        <div><small>Arms</small><b>2 × SO-ARM101, 6-DoF</b></div>
-        <div><small>End effectors</small><b>Parallel grippers</b></div>
-        <div><small>Arm sensing</small><b>Wrist cameras on each arm</b></div>
-        <div><small>Mobile base</small><b>TurtleBot 4 (iRobot Create 3)</b></div>
-        <div><small>Base sensing</small><b>OAK-D camera + lidar</b></div>
-        <div><small>Simulation</small><b>NVIDIA Isaac Sim / Isaac Lab</b></div>
-        <div><small>Onboard compute</small><b>Jetson AGX Orin (TBC)</b></div>
-        <div><small>Rules</small><b>Same 3 tracks &amp; scoring as full EBiM</b></div>
+      <div class="grid g2" style="gap:32px;align-items:start">
+        <figure class="fig reveal"><img src="img/platform.jpg" alt="Dual SO-ARM101 arms on a TurtleBot 4: prototype and render" loading="lazy" /><figcaption>Prototype (left) and design render (right)</figcaption></figure>
+        <div class="spec reveal">
+          <div><small>Arms</small><b>2 × SO-ARM101, 6-DoF</b></div>
+          <div><small>End effectors</small><b>Parallel grippers</b></div>
+          <div><small>Arm sensing</small><b>Wrist cameras on each arm</b></div>
+          <div><small>Mobile base</small><b>TurtleBot 4 (iRobot Create 3)</b></div>
+          <div><small>Base sensing</small><b>OAK-D camera + lidar</b></div>
+          <div><small>Simulation</small><b>NVIDIA Isaac Sim / Isaac Lab</b></div>
+          <div><small>Onboard compute</small><b>Jetson AGX Orin (TBC)</b></div>
+          <div><small>Rules</small><b>Same 3 tracks &amp; scoring as full EBiM</b></div>
+        </div>
       </div>
     </div>
   </section>
@@ -172,14 +204,23 @@
   <section id="arena">
     <div class="container">
       <div class="section-head reveal">
-        <div class="kicker">Task arena · 競賽場地</div>
+        <div class="kicker">Task arena</div>
         <h2>A smaller arena for a smaller robot</h2>
         <p>The EBiM-Lite arena keeps the layout of the full EBiM arena, scaled for the low-cost platform.</p>
       </div>
-      <div class="grid g3">
+      <div class="grid g3" style="margin-bottom:32px">
         <div class="card reveal"><div class="icon">🪑</div><h3>Tables</h3><p>Every table changes to a Moxboda round table, 30 cm high with a 70 cm diameter.</p></div>
         <div class="card reveal"><div class="icon">↔️</div><h3>Aisles</h3><p>All aisles shrink from 150 cm to 100 cm.</p></div>
         <div class="card reveal"><div class="icon">🤖</div><h3>Robot</h3><p>The full-size robot is replaced by the low-cost dual SO-101 + TurtleBot 4 platform.</p></div>
+      </div>
+      <div class="grid g2 reveal" style="margin-bottom:20px">
+        <figure class="fig"><img src="img/arena-wide.jpg" alt="Wide view of the arena with partitions and overhead camera rig" loading="lazy" /><figcaption>Arena overview</figcaption></figure>
+        <figure class="fig contain"><img src="img/arena-floorplan.png" alt="Arena floor plan with dimensions" loading="lazy" /><figcaption>Floor plan</figcaption></figure>
+      </div>
+      <div class="grid g3 reveal">
+        <figure class="fig cover"><img src="img/arena-render-1.jpg" alt="Arena render, kitchen side" loading="lazy" /><figcaption>Arena render</figcaption></figure>
+        <figure class="fig cover"><img src="img/arena-render-2.jpg" alt="Arena render, dining side" loading="lazy" /><figcaption>Arena render</figcaption></figure>
+        <figure class="fig contain"><img src="img/arena-table.jpg" alt="Moxboda round table, 30 cm high, 70 cm diameter" loading="lazy" /><figcaption>Moxboda table · H 30 cm · Ø 70 cm</figcaption></figure>
       </div>
     </div>
   </section>

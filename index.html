@@ -6,6 +6,8 @@
   <title>EBiM-Lite 2026 · Embodied Bimanual Manipulation Competition</title>
   <meta name="description" content="EBiM-Lite 2026: a low-cost embodied bimanual manipulation competition on dual SO-101 arms. Isaac Sim pre-selection, real-robot final at GTC Taipei." />
   <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
+  <link rel="alternate" hreflang="en" href="https://casear.github.io/ebim-lite-2026/" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://casear.github.io/ebim-lite-2026/zh-tw/" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -17,6 +19,7 @@
 
   <!-- HERO -->
   <header class="hero">
+    <div class="hero-bg" style="background-image:url(img/hero.jpg)"></div>
     <div class="container">
       <span class="eyebrow">Dual SO-101 · Embodied Bimanual Manipulation</span>
       <h1>EBiM-Lite 2026: <span class="grad">Low-Cost Bimanual Robots, Real-World Tasks</span></h1>
@@ -118,21 +121,21 @@
       </div>
       <div class="grid g3">
         <a class="card track-card reveal" href="competition.html#track1" style="color:inherit;text-decoration:none">
-          <div class="track-visual">🔌</div>
+          <div class="track-img"><img src="img/track1-cable-routing.jpg" alt="Dual SO-101 robot routing a cable through fixtures" loading="lazy" /></div>
           <div class="track-no">Track 1 · Deformable Objects</div>
           <h3>Cable Routing</h3>
           <p>Recognize the path, grasp the cable and route it through fixtures in the given order and direction on a 20 × 20 cm board.</p>
           <div class="metric">Primary: <code>Completion rate</code> · Tie-break: time</div>
         </a>
         <a class="card track-card reveal" href="competition.html#track2" style="color:inherit;text-decoration:none">
-          <div class="track-visual">🧩</div>
+          <div class="track-img"><img src="img/track2-thermal-pad.jpg" alt="Robot placing a thermal pad on memory modules" loading="lazy" /></div>
           <div class="track-no">Track 2 · Precision Placement</div>
           <h3>Thermal Pad Pick-and-Place</h3>
           <p>Pick a thermal pad (TIM) and place it on a randomly assigned memory module with the correct orientation.</p>
           <div class="metric">Score: <code>P × O × IoU</code> · Tie-break: time</div>
         </a>
         <a class="card track-card reveal" href="competition.html#track3" style="color:inherit;text-decoration:none">
-          <div class="track-visual">☕</div>
+          <div class="track-img"><img src="img/track3-service.jpg" alt="Robot setting a table with cup and bowl of coffee beans" loading="lazy" /></div>
           <div class="track-no">Track 3 · Long-Horizon</div>
           <h3>Service Robot Challenge</h3>
           <p>A full service cycle: set the table, recover the coffee beans, then clean up into the sink.</p>
@@ -152,14 +155,18 @@
             <h2>Two SO-ARM101 arms on a TurtleBot 4</h2>
             <p>A low-cost mobile bimanual robot built from open-source hardware and software, so any university team can take part.</p>
           </div>
+          <ul style="color:var(--text-mid);padding-left:18px;margin:0 0 24px">
+            <li><b>Manipulation:</b> 2 × SO-ARM101, 6-DoF, parallel grippers and wrist cameras</li>
+            <li><b>Mobile base:</b> TurtleBot 4 (iRobot Create 3), OAK-D camera and lidar</li>
+            <li><b>Compact arena:</b> 100 cm aisles, 30 cm-high round tables (Ø 70 cm)</li>
+            <li><b>Open source:</b> LeRobot-compatible arms and an open software stack</li>
+          </ul>
           <a class="btn btn-outline" href="competition.html#platform">Full platform specs →</a>
         </div>
-        <div class="grid g2 reveal">
-          <div class="card"><div class="icon">🦾</div><h3>Manipulation</h3><p>2 × SO-ARM101, 6-DoF, parallel grippers and wrist cameras</p></div>
-          <div class="card"><div class="icon">🛞</div><h3>Mobile base</h3><p>TurtleBot 4 (iRobot Create 3), OAK-D camera and lidar</p></div>
-          <div class="card"><div class="icon">📐</div><h3>Compact arena</h3><p>100 cm aisles, 30 cm-high round tables (Ø 70 cm)</p></div>
-          <div class="card"><div class="icon">🔓</div><h3>Open source</h3><p>LeRobot-compatible arms and an open software stack</p></div>
-        </div>
+        <figure class="fig reveal">
+          <img src="img/platform.jpg" alt="Dual SO-ARM101 arms mounted on a TurtleBot 4: real prototype and render" loading="lazy" />
+          <figcaption>Prototype (left) and design render (right)</figcaption>
+        </figure>
       </div>
     </div>
   </section>

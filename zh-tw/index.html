@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EBiM-Lite 2026 · 具身雙臂操作競賽</title>
+  <meta name="description" content="EBiM-Lite 2026：以雙 SO-101 手臂打造的低成本具身雙臂操作競賽。Isaac Sim 模擬初選，GTC Taipei 實機決賽。" />
+  <link rel="icon" href="../img/favicon.svg" type="image/svg+xml" />
+  <link rel="alternate" hreflang="en" href="https://casear.github.io/ebim-lite-2026/" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://casear.github.io/ebim-lite-2026/zh-tw/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <script src="../js/main.js" defer></script>
+</head>
+<body data-page="home">
+  <nav class="nav" id="site-nav"></nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-bg" style="background-image:url(../img/hero.jpg)"></div>
+    <div class="container">
+      <span class="eyebrow">雙 SO-101 · 具身雙臂操作</span>
+      <h1>EBiM-Lite 2026：<span class="grad">低成本雙臂機器人，挑戰真實任務</span></h1>
+      <p class="subtitle">一場帶領大學團隊從 Isaac Sim 走向真實移動式雙臂機器人的競賽。
+        在模擬中訓練，在全台驗證站實測，最後到 GTC Taipei 參加實機決賽。</p>
+      <div class="hero-meta">
+        <span>2026/11/20 開放報名</span>
+        <span>2026/12/21 報名截止</span>
+        <span>實機決賽 · 2027 年 5 月中 · GTC Taipei</span>
+      </div>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="competition.html">了解競賽內容 →</a>
+        <a class="btn btn-ghost" href="resources.html">學習與算力資源</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="stats">
+    <div class="container">
+      <div class="stat"><b>10–15</b><small>預計參與大學</small></div>
+      <div class="stat"><b>25+</b><small>Stage I 隊伍</small></div>
+      <div class="stat"><b>200+</b><small>學生與研究人員</small></div>
+      <div class="stat"><b>3</b><small>賽道，分開排名</small></div>
+    </div>
+  </div>
+
+  <!-- OVERVIEW -->
+  <section id="overview">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="kicker">競賽概覽</div>
+        <h2>兩個階段，資源逐階加碼</h2>
+        <p>所有隊伍都從模擬開始。表現最好的隊伍會拿到實體硬體與算力，把策略部署到真實的雙臂機器人上。
+          我們提供算力、學習內容與機械臂，賽事由合作的學術單位主辦。</p>
+      </div>
+      <div class="grid g3">
+        <div class="card stage-card reveal">
+          <div class="num">I</div>
+          <div class="stage-label">Stage I · 模擬賽</div>
+          <div class="when">2026/12 – 2027/03 · 所有隊伍</div>
+          <ul>
+            <li>每隊都可取得機器人學習教材（DLI 課程）</li>
+            <li>雲端額度，供學習與有限度的模型訓練</li>
+            <li>Isaac Sim / Isaac Lab 中的確定性模擬任務</li>
+            <li>模擬初選：2027/02/25 – 03/25</li>
+          </ul>
+        </div>
+        <div class="card stage-card reveal">
+          <div class="num">II</div>
+          <div class="stage-label">Stage II · 入選隊伍</div>
+          <div class="when">2027/03 – 05 · 約 10 隊</div>
+          <ul>
+            <li>出借 DGX Spark 或 RTX 工作站 40 天</li>
+            <li>提供 SO-101 機械臂與 TurtleBot 4 底盤（數量有限）</li>
+            <li>於各區驗證站進行線下預賽</li>
+            <li>額外 GPU 時數，用於模擬到實機的訓練</li>
+          </ul>
+        </div>
+        <div class="card stage-card reveal">
+          <div class="num">★</div>
+          <div class="stage-label">決賽 · 實機</div>
+          <div class="when">2027 年 5 月中 · GTC Taipei</div>
+          <ul>
+            <li>在實體場地上進行全自主評測</li>
+            <li>即時排行榜與頒獎典禮</li>
+            <li>前三名隊伍獲獎</li>
+            <li>公開發表 Benchmark 報告</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PIPELINE -->
+  <section class="dark" id="pipeline">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="kicker">競賽流程</div>
+        <h2>模擬 → 跨站驗證 → 實機評測</h2>
+        <p>從模擬到實機決賽，都使用同樣的三個賽道與計分規則。</p>
+      </div>
+      <div class="flow reveal">
+        <div class="flow-step"><div class="icon">🖥️</div><b>模擬賽</b><span>在 Isaac Lab 線上競賽。確定性任務，公開排行榜。</span></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><div class="icon">📍</div><b>跨站驗證</b><span>台北／桃園 · 台南／高雄 · 新竹（待確認）</span></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><div class="icon">🏆</div><b>實機決賽</b><span>於 GTC Taipei 現場進行全自主評測，接著頒獎並發表 Benchmark 報告。</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRACKS -->
+  <section id="tracks">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="kicker">賽道</div>
+        <h2>三個工業與服務情境</h2>
+        <p>每個賽道分開排名。只評全自主運作，不可遙控操作。</p>
+      </div>
+      <div class="grid g3">
+        <a class="card track-card reveal" href="competition.html#track1" style="color:inherit;text-decoration:none">
+          <div class="track-img"><img src="../img/track1-cable-routing.jpg" alt="雙 SO-101 機器人將線纜穿過夾具" loading="lazy" /></div>
+          <div class="track-no">Track 1 · 可變形物體</div>
+          <h3>線纜佈線</h3>
+          <p>辨識路徑、抓取線纜，並在 20 × 20 cm 的板上依指定順序與方向穿過各夾具。</p>
+          <div class="metric">主要指標：<code>完成率</code> · 同分比：時間</div>
+        </a>
+        <a class="card track-card reveal" href="competition.html#track2" style="color:inherit;text-decoration:none">
+          <div class="track-img"><img src="../img/track2-thermal-pad.jpg" alt="機器人將導熱墊放到記憶體模組上" loading="lazy" /></div>
+          <div class="track-no">Track 2 · 精密放置</div>
+          <h3>導熱墊取放</h3>
+          <p>夾取導熱墊（TIM），以正確方向放到隨機指定的記憶體模組上。</p>
+          <div class="metric">分數：<code>P × O × IoU</code> · 同分比：時間</div>
+        </a>
+        <a class="card track-card reveal" href="competition.html#track3" style="color:inherit;text-decoration:none">
+          <div class="track-img"><img src="../img/track3-service.jpg" alt="機器人以杯子與咖啡豆碗布置餐桌" loading="lazy" /></div>
+          <div class="track-no">Track 3 · 長程任務</div>
+          <h3>服務機器人挑戰</h3>
+          <p>完整服務流程：布置餐桌、回收咖啡豆，再把餐具收回水槽。</p>
+          <div class="metric">分數：<code>滿分 10 分</code> · 階段 → 分數 → 時間</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLATFORM -->
+  <section class="alt" id="platform">
+    <div class="container">
+      <div class="grid g2" style="align-items:center;gap:48px">
+        <div class="reveal">
+          <div class="section-head" style="margin-bottom:20px">
+            <div class="kicker">競賽平台</div>
+            <h2>TurtleBot 4 搭載兩支 SO-ARM101</h2>
+            <p>以開源軟硬體打造的低成本移動式雙臂機器人，讓每個大學團隊都能參加。</p>
+          </div>
+          <ul style="color:var(--text-mid);padding-left:18px;margin:0 0 24px">
+            <li><b>操作：</b>2 × SO-ARM101 六軸手臂，平行夾爪與腕部相機</li>
+            <li><b>移動底盤：</b>TurtleBot 4（iRobot Create 3），OAK-D 相機與光達</li>
+            <li><b>精簡場地：</b>100 cm 走道、30 cm 高圓桌（直徑 70 cm）</li>
+            <li><b>開源：</b>相容 LeRobot 的手臂與開放軟體堆疊</li>
+          </ul>
+          <a class="btn btn-outline" href="competition.html#platform">完整平台規格 →</a>
+        </div>
+        <figure class="fig reveal">
+          <img src="../img/platform.jpg" alt="TurtleBot 4 搭載雙 SO-ARM101 手臂：實體原型與設計渲染" loading="lazy" />
+          <figcaption>實體原型（左）與設計渲染（右）</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- DATES -->
+  <section id="dates">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="kicker">時程</div>
+        <h2>重要日期</h2>
+        <p>日期可能調整，請以本頁最新公告為準。</p>
+      </div>
+      <ul class="timeline reveal">
+        <li class="highlight"><div class="date">2026/11/20</div><div class="what"><b>正式公告 · 開放報名</b><span>公布競賽細節、規則與學習教材。</span></div></li>
+        <li><div class="date">2026/12/21</div><div class="what"><b>報名截止</b><span>隊伍報名結束，開始 Stage I 模擬與算力資源。</span></div></li>
+        <li><div class="date">2026/12 – 2027/02</div><div class="what"><b>Stage I · 在模擬中學習與開發</b><span>DLI 課程、雲端額度與 Isaac Lab 任務環境。</span></div></li>
+        <li><div class="date">2027/02/25 – 03/25</div><div class="what"><b>模擬初選</b><span>以確定性模擬任務評測各隊提交成果。</span></div></li>
+        <li><div class="date">2027/03 下旬</div><div class="what"><b>公布 Stage II 入選隊伍</b><span>約 10 支入選隊伍取得硬體與算力。</span></div></li>
+        <li><div class="date">2027/03 – 05</div><div class="what"><b>Stage II · 跨站驗證</b><span>於各區驗證站進行線下預賽。</span></div></li>
+        <li class="highlight"><div class="date">2027/05 中</div><div class="what"><b>實機決賽 @ GTC Taipei</b><span>現場決賽、頒獎典禮與 Benchmark 報告。</span></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ORGANIZERS -->
+  <section class="alt" id="organizers">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="kicker">團隊</div>
+        <h2>主辦單位與合作夥伴</h2>
+        <p>籌備委員會與合作夥伴名單即將公布。</p>
+      </div>
+      <div class="grid g4 reveal" style="margin-bottom:32px">
+        <div class="person"><div class="avatar">TBA</div><b>即將公布</b><small>學術主辦單位</small></div>
+        <div class="person"><div class="avatar">TBA</div><b>即將公布</b><small>技術負責人</small></div>
+        <div class="person"><div class="avatar">TBA</div><b>即將公布</b><small>模擬負責人</small></div>
+        <div class="person"><div class="avatar">TBA</div><b>即將公布</b><small>實機負責人</small></div>
+      </div>
+      <div class="grid g4 reveal">
+        <div class="logo-slot">合作夥伴 Logo</div>
+        <div class="logo-slot">合作夥伴 Logo</div>
+        <div class="logo-slot">合作夥伴 Logo</div>
+        <div class="logo-slot">合作夥伴 Logo</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REGISTER / CONTACT -->
+  <section id="register">
+    <div class="container">
+      <div class="cta reveal">
+        <h2>準備好打造雙臂機器人策略了嗎？</h2>
+        <p>開放台灣所有大學與產業學習者參加。組隊、使用我們提供的教材學習，
+          把你的策略從模擬帶到真實機器人上。</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="#" aria-disabled="true">11/20 開放報名 →</a>
+          <a class="btn btn-ghost" href="competition.html#participation">參賽辦法</a>
+        </div>
+        <p id="contact" style="margin:24px auto 0;font-size:.9rem">有問題嗎？請聯絡主辦單位：<a href="mailto:contact@example.com" style="color:var(--accent)">contact@example.com</a></p>
+      </div>
+    </div>
+  </section>
+
+  <footer id="site-footer"></footer>
+</body>
+</html>

@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>競賽內容 · EBiM-Lite 2026</title>
+  <meta name="description" content="EBiM-Lite 2026 賽道、計分規則、機器人平台與競賽場地。" />
+  <link rel="icon" href="../img/favicon.svg" type="image/svg+xml" />
+  <link rel="alternate" hreflang="en" href="https://casear.github.io/ebim-lite-2026/competition.html" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://casear.github.io/ebim-lite-2026/zh-tw/competition.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <script src="../js/main.js" defer></script>
+</head>
+<body data-page="competition">
+  <nav class="nav" id="site-nav"></nav>
+
+  <header class="hero small">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">首頁</a> / 競賽內容</div>
+      <h1>EBiM-Lite <span class="grad">競賽內容</span></h1>
+      <p class="subtitle">在低成本移動式雙臂機器人上進行三個賽道，從 Isaac Sim 到真實世界，全程以全自主方式評測。</p>
+      <div class="toc">
+        <a href="#rules">通用規則</a>
+        <a href="#track1">Track 1 · 線纜佈線</a>
+        <a href="#track2">Track 2 · 導熱墊</a>
+        <a href="#track3">Track 3 · 服務機器人</a>
+        <a href="#platform">平台</a>
+        <a href="#arena">場地</a>
+        <a href="#sites">驗證站</a>
+        <a href="#participation">參賽辦法</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- RULES -->
+  <section id="rules">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="kicker">通用規則</div>
+        <h2>從模擬到實機，任務與規則都一樣</h2>
+      </div>
+      <div class="grid g3">
+        <div class="card reveal"><div class="icon">🤖</div><h3>僅限全自主</h3><p>評測期間不可遙控操作。策略必須自行感知、規劃與執行。</p></div>
+        <div class="card reveal"><div class="icon">🏁</div><h3>3 個賽道，分開排名</h3><p>隊伍可報名一個或多個賽道，每個賽道有各自的排行榜與獎項。</p></div>
+        <div class="card reveal"><div class="icon">🔁</div><h3>模擬 → 實機</h3><p>由 Isaac Sim 模擬初選決定哪些隊伍晉級跨站驗證與實機決賽。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRACKS -->
+  <section class="alt" id="tracks">
+    <div class="container">
+
+      <div class="task reveal" id="track1">
+        <div>
+          <span class="tag">Track 1</span><span class="tag green">可變形物體操作</span>
+          <h3>線纜佈線</h3>
+          <p class="lead">工業情境：路徑辨識 → 線纜抓取 → 佈線 → 固定，於 20 cm × 20 cm 的板上進行。</p>
+          <h4>任務情境</h4>
+          <ul>
+            <li>依指定的夾具配置、順序與方向完成線纜佈線</li>
+            <li>只評全自主運作，不可遙控操作</li>
+            <li>每次嘗試限時 60 分鐘</li>
+            <li>任務板由完整版 EBiM 縮小，以符合 SO-101 的工作範圍</li>
+          </ul>
+          <h4>計分方式</h4>
+          <div class="formula">完成率 = Prefix ÷ Total
+            <small>Prefix = 從起點開始連續正確的夾具數</small></div>
+          <ul>
+            <li><b>主要指標：</b>完成率（%）</li>
+            <li><b>同分比較：</b>完成時間</li>
+          </ul>
+          <div class="callout">一旦出錯就中斷計算：第一個錯誤之後即使再正確穿過夾具，也不列入分數。</div>
+        </div>
+        <div>
+          <figure class="fig"><img src="../img/track1-cable-routing.jpg" alt="雙 SO-101 機器人在夾具板上佈紅色線纜" loading="lazy" /><figcaption>EBiM-Lite 平台上的線纜佈線</figcaption></figure>
+          <div class="task-figs">
+            <figure class="fig contain"><img src="../img/track1-board.jpg" alt="夾具板配置" loading="lazy" /><figcaption>夾具板（ManipulationNet）</figcaption></figure>
+            <figure class="fig contain"><img src="../img/track1-sim.jpg" alt="Isaac Sim 中的佈線路徑" loading="lazy" /><figcaption>Isaac Sim 中的佈線路徑</figcaption></figure>
+            <figure class="fig wide"><img src="../img/track1-fixtures.png" alt="三種夾具：夾扣、線軸與卡槽" loading="lazy" style="padding:8px" /><figcaption>夾具種類</figcaption></figure>
+          </div>
+        </div>
+      </div>
+
+      <div class="task reveal" id="track2">
+        <div>
+          <span class="tag">Track 2</span><span class="tag green">精密放置</span>
+          <h3>導熱墊取放</h3>
+          <p class="lead">工業電子製造情境：導熱介面材料（TIM）組裝 Benchmark。</p>
+          <h4>任務情境</h4>
+          <ul>
+            <li>夾取一片導熱墊，放到隨機指定的目標上</li>
+            <li>候選目標只有 3 條記憶體模組</li>
+            <li>必須保持正確方向：方向錯誤即得 0 分</li>
+            <li>放置精度以 IoU（0.0 – 1.0）計分</li>
+          </ul>
+          <h4>計分方式</h4>
+          <div class="formula">分數 = P × O × IoU
+            <small>夾取成功（0/1）× 方向正確（0/1）× IoU（0–1）</small></div>
+          <ul>
+            <li><b>主要指標：</b>P × O × IoU</li>
+            <li><b>次要指標：</b>原始 IoU</li>
+            <li><b>同分比較：</b>完成時間</li>
+          </ul>
+        </div>
+        <div>
+          <figure class="fig"><img src="../img/track2-thermal-pad.jpg" alt="機器人在三條記憶體模組旁夾取導熱墊" loading="lazy" /><figcaption>導熱墊供料座與三條候選記憶體模組</figcaption></figure>
+          <div class="task-figs">
+            <figure class="fig contain"><img src="../img/track2-sim.jpg" alt="模擬中的導熱墊供料座與記憶體模組" loading="lazy" /><figcaption>模擬素材</figcaption></figure>
+            <figure class="fig contain"><img src="../img/track2-pad-deform.png" alt="可變形導熱墊模擬" loading="lazy" /><figcaption>可變形導熱墊模型</figcaption></figure>
+          </div>
+        </div>
+      </div>
+
+      <div class="task reveal" id="track3" style="grid-template-columns:1fr">
+        <div class="grid g2" style="gap:40px">
+          <div>
+            <span class="tag">Track 3</span><span class="tag green">長程具身操作</span>
+            <h3>服務機器人挑戰</h3>
+            <p class="lead">完整服務流程（布置餐桌 → 回收咖啡豆 → 清理），橫跨廚房區、用餐區與垃圾回收區，使用杯子、一碗咖啡豆與湯匙。</p>
+            <h4>配分（滿分 10 分）</h4>
+            <div class="score-bar">
+              <div style="flex:3">布置 · 3</div>
+              <div style="flex:4">回收咖啡豆 · 4</div>
+              <div style="flex:3">清理 · 3</div>
+            </div>
+            <h4>排名順序</h4>
+            <ol class="rank-list">
+              <li>完成的最高階段</li>
+              <li>總分</li>
+              <li>完成時間</li>
+            </ol>
+            <div class="callout"><b>舉例：</b>完成 Stage 2 的隊伍，排名高於只完成 Stage 1 的隊伍，即使後者總分較高。</div>
+          </div>
+          <figure class="fig"><img src="../img/arena-overview.jpg" alt="服務場地全景：廚房、用餐與垃圾回收區" loading="lazy" /><figcaption>服務場地：廚房區、用餐區與垃圾回收區</figcaption></figure>
+        </div>
+        <div class="stage-figs">
+          <div class="card">
+            <div class="track-img"><img src="../img/track3-stage1.jpg" alt="Stage 1：布置餐桌" loading="lazy" /></div>
+            <span class="tag">Stage 1 · 3 分</span>
+            <h3>布置餐桌</h3>
+            <ul>
+              <li>把杯子、碗（裝有咖啡豆）與湯匙從廚房區送到用餐區</li>
+              <li>三個隨機指定的目標位置：一個放杯子，碗與湯匙則放在機器人頭部旁</li>
+              <li>所有物品都到達指定位置即完成此階段</li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="track-img"><img src="../img/track3-stage2.jpg" alt="Stage 2：把咖啡豆倒進放在秤上的容器" loading="lazy" /></div>
+            <span class="tag green">Stage 2 · 4 分</span>
+            <h3>回收咖啡豆</h3>
+            <ul>
+              <li>把碗中的咖啡豆倒入垃圾回收區的回收容器</li>
+              <li>容器放在秤上：回收率 = 回收重量 ÷ 原始重量</li>
+              <li>依比例給分：100% → 滿分、90% → 90%、80% → 80%</li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="track-img"><img src="../img/track3-stage3.jpg" alt="Stage 3：把餐具收回水槽" loading="lazy" /></div>
+            <span class="tag amber">Stage 3 · 3 分</span>
+            <h3>清理</h3>
+            <ul>
+              <li>把杯子、碗與湯匙送回廚房區</li>
+              <li>逐一放進水槽區域，也就是流理台上的黑色矩形</li>
+              <li>每放進一件得 1 分</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PLATFORM -->
+  <section class="dark" id="platform">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="kicker">競賽平台</div>
+        <h2>低成本移動式雙臂機器人</h2>
+        <p>TurtleBot 4 搭載兩支 SO-ARM101。開源軟硬體降低大學團隊的參賽門檻，
+          精簡的體積也剛好適合 EBiM-Lite 場地的 100 cm 走道與 30 cm 桌面。</p>
+      </div>
+      <div class="grid g2" style="gap:32px;align-items:start">
+        <figure class="fig reveal"><img src="../img/platform.jpg" alt="TurtleBot 4 搭載雙 SO-ARM101：實體原型與渲染" loading="lazy" /><figcaption>實體原型（左）與設計渲染（右）</figcaption></figure>
+        <div class="spec reveal">
+          <div><small>手臂</small><b>2 × SO-ARM101，六軸</b></div>
+          <div><small>末端執行器</small><b>平行夾爪</b></div>
+          <div><small>手臂感測</small><b>每支手臂皆有腕部相機</b></div>
+          <div><small>移動底盤</small><b>TurtleBot 4（iRobot Create 3）</b></div>
+          <div><small>底盤感測</small><b>OAK-D 相機 + 光達</b></div>
+          <div><small>模擬</small><b>NVIDIA Isaac Sim / Isaac Lab</b></div>
+          <div><small>機上運算</small><b>Jetson AGX Orin（待確認）</b></div>
+          <div><small>規則</small><b>與完整版 EBiM 相同的 3 個賽道與計分</b></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARENA -->
+  <section id="arena">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="kicker">競賽場地</div>
+        <h2>小機器人，配上縮小的場地</h2>
+        <p>EBiM-Lite 場地沿用完整版 EBiM 的配置，並依低成本平台的尺寸縮小。</p>
+      </div>
+      <div class="grid g3" style="margin-bottom:32px">
+        <div class="card reveal"><div class="icon">🪑</div><h3>桌子</h3><p>所有桌子改為 Moxboda 圓桌，高 30 cm、直徑 70 cm。</p></div>
+        <div class="card reveal"><div class="icon">↔️</div><h3>走道</h3><p>所有走道由 150 cm 縮小為 100 cm。</p></div>
+        <div class="card reveal"><div class="icon">🤖</div><h3>機器人</h3><p>原本的全尺寸機器人改為低成本的雙 SO-101 + TurtleBot 4 平台。</p></div>
+      </div>
+      <div class="grid g2 reveal" style="margin-bottom:20px">
+        <figure class="fig"><img src="../img/arena-wide.jpg" alt="場地全景，含隔間與頂部相機架" loading="lazy" /><figcaption>場地全景</figcaption></figure>
+        <figure class="fig contain"><img src="../img/arena-floorplan.png" alt="附尺寸標註的場地平面圖" loading="lazy" /><figcaption>平面圖</figcaption></figure>
+      </div>
+      <div class="grid g3 reveal">
+        <figure class="fig cover"><img src="../img/arena-render-1.jpg" alt="場地渲染：廚房側" loading="lazy" /><figcaption>場地渲染</figcaption></figure>
+        <figure class="fig cover"><img src="../img/arena-render-2.jpg" alt="場地渲染：用餐側" loading="lazy" /><figcaption>場地渲染</figcaption></figure>
+        <figure class="fig contain"><img src="../img/arena-table.jpg" alt="Moxboda 圓桌，高 30 cm、直徑 70 cm" loading="lazy" /><figcaption>Moxboda 圓桌 · 高 30 cm · 直徑 70 cm</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- SITES -->
+  <section class="alt" id="sites">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="kicker">現地驗證</div>
+        <h2>各區驗證站</h2>
+        <p>Stage II 隊伍在決賽前，先到各區驗證站以實體硬體驗證策略。</p>
+      </div>
+      <div class="grid g3">
+        <div class="card reveal"><div class="icon">📍</div><h3>北區</h3><p>台北／桃園</p></div>
+        <div class="card reveal"><div class="icon">📍</div><h3>中區</h3><p>新竹 <span class="tag amber">待確認</span></p></div>
+        <div class="card reveal"><div class="icon">📍</div><h3>南區</h3><p>台南／高雄</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTICIPATION -->
+  <section id="participation">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="kicker">參賽辦法</div>
+        <h2>誰可以參加、如何參加</h2>
+      </div>
+      <div class="grid g2">
+        <div class="card reveal">
+          <h3>Stage I · 模擬賽</h3>
+          <ul>
+            <li>開放所有大學與產業學習者參加</li>
+            <li>請於 <b>2026/12/21</b> 前完成隊伍報名</li>
+            <li>完成建議的 DLI 課程（見<a href="resources.html">學習與算力</a>）</li>
+            <li>在我們提供的 Isaac Lab 任務環境中開發策略</li>
+            <li>模擬初選提交期間：<b>2027/02/25 – 03/25</b></li>
+          </ul>
+        </div>
+        <div class="card reveal">
+          <h3>Stage II · 實機賽</h3>
+          <ul>
+            <li>依模擬成績選出約 10 隊</li>
+            <li>出借 DGX Spark／RTX 工作站與 SO-101 + TurtleBot 4 硬體</li>
+            <li>於各區驗證站進行線下預賽</li>
+            <li>決賽隊伍於 <b>2027 年 5 月中 GTC Taipei</b> 現場競賽</li>
+          </ul>
+        </div>
+      </div>
+      <div class="callout warn reveal"><b>即將公布：</b>程式碼 repository、提交格式與詳細規則手冊，將於 2026/11/20 正式公告時發布。</div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="container">
+      <div class="cta reveal">
+        <h2>第一次接觸機器人學習？</h2>
+        <p>從免費的 NVIDIA DLI 課程與每隊都有的算力資源開始。</p>
+        <div class="btn-row"><a class="btn btn-primary" href="resources.html">學習與算力 →</a></div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="site-footer"></footer>
+</body>
+</html>
