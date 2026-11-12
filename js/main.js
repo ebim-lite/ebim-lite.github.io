@@ -34,17 +34,22 @@
     nav.innerHTML = `
       <div class="container">
         <a class="nav-logo" href="index.html">EBiM<span>-Lite</span> 2026</a>
-        <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
         <ul class="nav-links">
           ${links.map(([href, label, key]) =>
             `<li><a href="${href}"${key === page ? ' class="active"' : ''}>${label}</a></li>`).join('')}
           <li><a class="nav-cta" href="index.html#register">${T.register}</a></li>
-          <li class="lang-switch">
-            <a href="${enHref}" hreflang="en"${isZh ? '' : ' class="cur"'}>EN</a>
-            <a href="${zhHref}" hreflang="zh-Hant"${isZh ? ' class="cur"' : ''}>繁中</a>
-          </li>
         </ul>
+        <div class="lang-switch" role="group" aria-label="Language / 語言">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <a href="${enHref}" hreflang="en" lang="en"${isZh ? '' : ' class="cur" aria-current="true"'}>EN</a>
+          <a href="${zhHref}" hreflang="zh-Hant" lang="zh-Hant"${isZh ? ' class="cur" aria-current="true"' : ''}>中文</a>
+        </div>
+        <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
       </div>`;
+    // keep the current section when switching language
+    nav.querySelectorAll('.lang-switch a').forEach((a) => {
+      a.addEventListener('click', () => { if (location.hash) a.href = a.getAttribute('href').split('#')[0] + location.hash; });
+    });
     const toggle = nav.querySelector('.nav-toggle');
     const list = nav.querySelector('.nav-links');
     toggle.addEventListener('click', () => {
