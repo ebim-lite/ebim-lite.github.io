@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Learning &amp; Compute · EBiM-Lite 2026</title>
+  <meta name="description" content="Training courses and computing resources for EBiM-Lite 2026 teams." />
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/main.js" defer></script>
+</head>
+<body data-page="resources">
+  <nav class="nav" id="site-nav"></nav>
+
+  <header class="hero small">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Home</a> / Learning &amp; Compute</div>
+      <h1>Learn to earn: <span class="grad">sponsored learning &amp; compute</span></h1>
+      <p class="subtitle">Every team gets learning materials and GPU time. Selected teams get dedicated hardware and real robots.</p>
+      <div class="toc">
+        <a href="#courses">Training courses</a>
+        <a href="#compute">Computing resources</a>
+        <a href="#software">Software stack</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- COURSES -->
+  <section id="courses">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="kicker">NVIDIA DLI courses</div>
+        <h2>Training courses for Stage I participants</h2>
+        <p>Self-paced courses and instructor-led workshops covering robotics simulation, synthetic data, OpenUSD and robot learning.</p>
+      </div>
+      <div class="table-wrap reveal">
+        <table>
+          <thead><tr><th>Course ID</th><th>Course name</th><th>Price</th><th>Duration</th><th>Format</th></tr></thead>
+          <tbody>
+            <tr><td>S-OV-35</td><td>A Beginner's Guide to Autonomous Robots</td><td class="price-free">Free</td><td>1 hr</td><td>Self-paced</td></tr>
+            <tr><td>S-OV-37+V1</td><td>Generating High-Quality Motion Data for Robotics With MobilityGen</td><td class="price-free">Free</td><td>1.5 hr</td><td>Self-paced</td></tr>
+            <tr><td>S-OV-39+V1</td><td>Software-in-the-Loop Testing for Robots With OpenUSD, Isaac Sim, and ROS</td><td class="price-free">Free</td><td>2 hr</td><td>Self-paced</td></tr>
+            <tr><td>S-OV-15+V1</td><td>Fundamentals of Working With OpenUSD</td><td class="price-free">Free</td><td>2 hr</td><td>Self-paced</td></tr>
+            <tr><td>S-OV-57</td><td>From Perception to Prediction: Developing Physical AI with Cosmos 3</td><td>$30</td><td>2 hr</td><td>Self-paced</td></tr>
+            <tr><td>S-OV-41</td><td>Accelerating ROS 2 Workloads With NVIDIA GPU-Powered Libraries and AI Models</td><td>$30</td><td>2 hr</td><td>Self-paced</td></tr>
+            <tr><td>C-OV-07+V1</td><td>How to Simulate, Train, Validate, and Deploy an End-to-End Robotics Workflow With NVIDIA Isaac</td><td>—</td><td>8 hr</td><td>Instructor-led</td></tr>
+            <tr><td>X-OV-51+V1</td><td>Accelerating Robot Learning With Isaac Lab and Newton</td><td>—</td><td>2 hr</td><td>Instructor-led</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPUTE -->
+  <section class="alt" id="compute">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="kicker">Computing resources</div>
+        <h2>GPU hours and hardware for each phase</h2>
+      </div>
+      <div class="grid g2">
+        <div class="card reveal">
+          <span class="tag">Phase I &amp; II · Dec 2026 – Mar 2027</span>
+          <h3>25+ teams · Simulation</h3>
+          <div class="table-wrap" style="margin-top:12px;box-shadow:none">
+            <table>
+              <thead><tr><th>Resource</th><th>Allocation per team</th></tr></thead>
+              <tbody>
+                <tr><td>NVIDIA L40</td><td>120 hr</td></tr>
+                <tr><td>NVIDIA A100</td><td>100 hr</td></tr>
+                <tr><td>NVIDIA H100</td><td>50 hr</td></tr>
+                <tr><td>Brev credits</td><td>For learning and limited model training</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card reveal">
+          <span class="tag green">Phase III · Mar – May 2027</span>
+          <h3>~10 selected teams · Real robot</h3>
+          <div class="table-wrap" style="margin-top:12px;box-shadow:none">
+            <table>
+              <thead><tr><th>Resource</th><th>Allocation per team</th></tr></thead>
+              <tbody>
+                <tr><td>DGX Spark / RTX workstation</td><td>40-day loan</td></tr>
+                <tr><td>NVIDIA L40</td><td>120 hr</td></tr>
+                <tr><td>NVIDIA A100</td><td>100 hr</td></tr>
+                <tr><td>NVIDIA H100</td><td>50 hr</td></tr>
+                <tr><td>Physical robot</td><td>SO-101 arms + TurtleBot 4</td></tr>
+                <tr><td>Jetson AGX Thor</td><td><span class="tag amber">TBC</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOFTWARE -->
+  <section id="software">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="kicker">Software stack</div>
+        <h2>Tools you will use</h2>
+      </div>
+      <div class="grid g4">
+        <div class="card reveal"><div class="icon">🧪</div><h3>Isaac Sim</h3><p>Physically based simulation of the arena and the robot.</p></div>
+        <div class="card reveal"><div class="icon">🧠</div><h3>Isaac Lab</h3><p>Robot learning framework for training and evaluating policies.</p></div>
+        <div class="card reveal"><div class="icon">🦾</div><h3>LeRobot</h3><p>Open-source SO-101 tooling for data collection and policy deployment.</p></div>
+        <div class="card reveal"><div class="icon">🧭</div><h3>ROS 2</h3><p>TurtleBot 4 navigation and system integration.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="site-footer"></footer>
+</body>
+</html>

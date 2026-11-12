@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EBiM-Lite 2026 · Embodied Bimanual Manipulation Competition</title>
+  <meta name="description" content="EBiM-Lite 2026: a low-cost embodied bimanual manipulation competition on dual SO-101 arms. Isaac Sim pre-selection, real-robot final at GTC Taipei." />
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/main.js" defer></script>
+</head>
+<body data-page="home">
+  <nav class="nav" id="site-nav"></nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container">
+      <span class="eyebrow">Dual SO-101 · Embodied Bimanual Manipulation</span>
+      <h1>EBiM-Lite 2026: <span class="grad">Low-Cost Bimanual Robots, Real-World Tasks</span></h1>
+      <p class="subtitle">A university competition that takes teams from Isaac Sim to a real mobile bimanual robot.
+        Train in simulation, get validated across Taiwan, and compete in the real-robot final at GTC Taipei.</p>
+      <div class="hero-meta">
+        <span>Registration opens Nov 20, 2026</span>
+        <span>Application deadline Dec 21, 2026</span>
+        <span>Real-robot final · Mid-May 2027 · GTC Taipei</span>
+      </div>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="competition.html">Explore the Competition →</a>
+        <a class="btn btn-ghost" href="resources.html">Learning &amp; Compute</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="stats">
+    <div class="container">
+      <div class="stat"><b>10–15</b><small>Universities expected</small></div>
+      <div class="stat"><b>25+</b><small>Teams at Stage I</small></div>
+      <div class="stat"><b>200+</b><small>Students &amp; researchers</small></div>
+      <div class="stat"><b>3</b><small>Tracks, ranked separately</small></div>
+    </div>
+  </div>
+
+  <!-- OVERVIEW -->
+  <section id="overview">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="kicker">Overview</div>
+        <h2>Two stages, with more resources at each stage</h2>
+        <p>All teams start in simulation. The top teams get real hardware and compute to take their policies onto
+          a physical dual-arm robot. We supply compute, learning content and robot arms. The academic host runs the event.</p>
+      </div>
+      <div class="grid g3">
+        <div class="card stage-card reveal">
+          <div class="num">I</div>
+          <div class="stage-label">Stage I · Simulation</div>
+          <div class="when">Dec 2026 – Mar 2027 · All teams</div>
+          <ul>
+            <li>Robotics learning materials (DLI courses) for every team</li>
+            <li>Cloud credits for learning and limited model training</li>
+            <li>Deterministic simulation tasks in Isaac Sim / Isaac Lab</li>
+            <li>Simulation pre-selection: Feb 25 – Mar 25, 2027</li>
+          </ul>
+        </div>
+        <div class="card stage-card reveal">
+          <div class="num">II</div>
+          <div class="stage-label">Stage II · Selected Teams</div>
+          <div class="when">Mar – May 2027 · ~10 teams</div>
+          <ul>
+            <li>DGX Spark or RTX workstation lent for 40 days</li>
+            <li>SO-101 arms and TurtleBot 4 base provided (limited quantity)</li>
+            <li>Offline preliminary rounds at regional validation sites</li>
+            <li>Additional GPU hours for sim-to-real training</li>
+          </ul>
+        </div>
+        <div class="card stage-card reveal">
+          <div class="num">★</div>
+          <div class="stage-label">Final · Real Robot</div>
+          <div class="when">Mid-May 2027 · GTC Taipei</div>
+          <ul>
+            <li>Full-autonomy evaluation on the real arena</li>
+            <li>Live leaderboard and awards ceremony</li>
+            <li>Prizes for the top 3 teams</li>
+            <li>Public benchmark report</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PIPELINE -->
+  <section class="dark" id="pipeline">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="kicker">How it works</div>
+        <h2>Simulation → Cross-Site Validation → Real-World Evaluation</h2>
+        <p>The same three tracks and scoring rules apply from simulation to the real final.</p>
+      </div>
+      <div class="flow reveal">
+        <div class="flow-step"><div class="icon">🖥️</div><b>Simulation</b><span>Compete virtually in Isaac Lab. Deterministic tasks, open leaderboard.</span></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><div class="icon">📍</div><b>Cross-Site Validation</b><span>Taipei/Taoyuan · Tainan/Kaohsiung · Hsinchu (TBC)</span></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><div class="icon">🏆</div><b>Real-World Final</b><span>Live, full-autonomy runs at GTC Taipei, then awards and the benchmark report.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRACKS -->
+  <section id="tracks">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="kicker">Tracks</div>
+        <h2>Three industrial and service scenarios</h2>
+        <p>Each track is ranked separately. Only full autonomy is evaluated: no teleoperation.</p>
+      </div>
+      <div class="grid g3">
+        <a class="card track-card reveal" href="competition.html#track1" style="color:inherit;text-decoration:none">
+          <div class="track-visual">🔌</div>
+          <div class="track-no">Track 1 · Deformable Objects</div>
+          <h3>Cable Routing</h3>
+          <p>Recognize the path, grasp the cable and route it through fixtures in the given order and direction on a 20 × 20 cm board.</p>
+          <div class="metric">Primary: <code>Completion rate</code> · Tie-break: time</div>
+        </a>
+        <a class="card track-card reveal" href="competition.html#track2" style="color:inherit;text-decoration:none">
+          <div class="track-visual">🧩</div>
+          <div class="track-no">Track 2 · Precision Placement</div>
+          <h3>Thermal Pad Pick-and-Place</h3>
+          <p>Pick a thermal pad (TIM) and place it on a randomly assigned memory module with the correct orientation.</p>
+          <div class="metric">Score: <code>P × O × IoU</code> · Tie-break: time</div>
+        </a>
+        <a class="card track-card reveal" href="competition.html#track3" style="color:inherit;text-decoration:none">
+          <div class="track-visual">☕</div>
+          <div class="track-no">Track 3 · Long-Horizon</div>
+          <h3>Service Robot Challenge</h3>
+          <p>A full service cycle: set the table, recover the coffee beans, then clean up into the sink.</p>
+          <div class="metric">Score: <code>max 10 pts</code> · Stage → score → time</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLATFORM -->
+  <section class="alt" id="platform">
+    <div class="container">
+      <div class="grid g2" style="align-items:center;gap:48px">
+        <div class="reveal">
+          <div class="section-head" style="margin-bottom:20px">
+            <div class="kicker">Platform</div>
+            <h2>Two SO-ARM101 arms on a TurtleBot 4</h2>
+            <p>A low-cost mobile bimanual robot built from open-source hardware and software, so any university team can take part.</p>
+          </div>
+          <a class="btn btn-outline" href="competition.html#platform">Full platform specs →</a>
+        </div>
+        <div class="grid g2 reveal">
+          <div class="card"><div class="icon">🦾</div><h3>Manipulation</h3><p>2 × SO-ARM101, 6-DoF, parallel grippers and wrist cameras</p></div>
+          <div class="card"><div class="icon">🛞</div><h3>Mobile base</h3><p>TurtleBot 4 (iRobot Create 3), OAK-D camera and lidar</p></div>
+          <div class="card"><div class="icon">📐</div><h3>Compact arena</h3><p>100 cm aisles, 30 cm-high round tables (Ø 70 cm)</p></div>
+          <div class="card"><div class="icon">🔓</div><h3>Open source</h3><p>LeRobot-compatible arms and an open software stack</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DATES -->
+  <section id="dates">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="kicker">Schedule</div>
+        <h2>Important dates</h2>
+        <p>Dates may be adjusted. Check this page for updates.</p>
+      </div>
+      <ul class="timeline reveal">
+        <li class="highlight"><div class="date">Nov 20, 2026</div><div class="what"><b>Official announcement · Registration opens</b><span>Competition details, rules and learning materials released.</span></div></li>
+        <li><div class="date">Dec 21, 2026</div><div class="what"><b>Application deadline</b><span>Team registration closes. Stage I simulation and compute access begin.</span></div></li>
+        <li><div class="date">Dec 2026 – Feb 2027</div><div class="what"><b>Stage I · Learn &amp; build in simulation</b><span>DLI courses, cloud credits and Isaac Lab task environments.</span></div></li>
+        <li><div class="date">Feb 25 – Mar 25, 2027</div><div class="what"><b>Simulation pre-selection</b><span>Submissions are evaluated on deterministic simulation tasks.</span></div></li>
+        <li><div class="date">Late Mar 2027</div><div class="what"><b>Stage II teams announced</b><span>About 10 selected teams receive hardware and compute.</span></div></li>
+        <li><div class="date">Mar – May 2027</div><div class="what"><b>Stage II · Cross-site validation</b><span>Offline preliminary rounds at regional validation sites.</span></div></li>
+        <li class="highlight"><div class="date">Mid-May 2027</div><div class="what"><b>Real-robot final @ GTC Taipei</b><span>Live finals, awards ceremony and benchmark report.</span></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ORGANIZERS -->
+  <section class="alt" id="organizers">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="kicker">People</div>
+        <h2>Organizers &amp; partners</h2>
+        <p>The organizing committee and partners will be announced soon.</p>
+      </div>
+      <div class="grid g4 reveal" style="margin-bottom:32px">
+        <div class="person"><div class="avatar">TBA</div><b>To be announced</b><small>Academic host</small></div>
+        <div class="person"><div class="avatar">TBA</div><b>To be announced</b><small>Technical lead</small></div>
+        <div class="person"><div class="avatar">TBA</div><b>To be announced</b><small>Simulation lead</small></div>
+        <div class="person"><div class="avatar">TBA</div><b>To be announced</b><small>Real-robot lead</small></div>
+      </div>
+      <div class="grid g4 reveal">
+        <div class="logo-slot">Partner logo</div>
+        <div class="logo-slot">Partner logo</div>
+        <div class="logo-slot">Partner logo</div>
+        <div class="logo-slot">Partner logo</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REGISTER / CONTACT -->
+  <section id="register">
+    <div class="container">
+      <div class="cta reveal">
+        <h2>Ready to build a bimanual robot policy?</h2>
+        <p>Open to all university and industry learners in Taiwan. Form a team, learn with the provided materials,
+          and take your policy from simulation to a real robot.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="#" aria-disabled="true">Registration opens Nov 20 →</a>
+          <a class="btn btn-ghost" href="competition.html#participation">Participation rules</a>
+        </div>
+        <p id="contact" style="margin:24px auto 0;font-size:.9rem">Questions? Contact the organizers at <a href="mailto:contact@example.com" style="color:var(--accent)">contact@example.com</a></p>
+      </div>
+    </div>
+  </section>
+
+  <footer id="site-footer"></footer>
+</body>
+</html>
