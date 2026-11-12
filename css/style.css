@@ -212,22 +212,22 @@ section.dark .stage-card .when { color: #fff; }
 
 /* ---------- Timeline ---------- */
 .timeline { position: relative; list-style: none; padding: 0; margin: 0; }
-.timeline::before { content: ""; position: absolute; left: 150px; top: 6px; bottom: 6px; width: 2px; background: var(--border); }
-.timeline li { display: grid; grid-template-columns: 150px 1fr; gap: 32px; padding: 14px 0; position: relative; }
+.timeline::before { content: ""; position: absolute; left: 230px; top: 6px; bottom: 6px; width: 2px; background: var(--border); }
+.timeline li { display: grid; grid-template-columns: 230px 1fr; gap: 32px; padding: 14px 0; position: relative; }
 .timeline li::before {
-  content: ""; position: absolute; left: 144px; top: 21px; width: 14px; height: 14px; border-radius: 50%;
+  content: ""; position: absolute; left: 224px; top: 21px; width: 14px; height: 14px; border-radius: 50%;
   background: var(--bg-white); border: 3px solid var(--accent-dark);
 }
 .timeline li.done::before { background: var(--accent-dark); }
 .timeline li.highlight::before { background: var(--accent-2); border-color: #2f8a17; box-shadow: 0 0 0 5px rgba(139, 227, 107, .25); }
-.timeline .date { font-weight: 800; color: var(--accent-dark); text-align: right; padding-right: 12px; }
+.timeline .date { font-weight: 800; color: var(--accent-dark); text-align: right; padding-right: 12px; white-space: nowrap; }
 .timeline .what b { display: block; }
 .timeline .what span { color: var(--text-mid); font-size: .93rem; }
 @media (max-width: 640px) {
   .timeline::before { left: 7px; }
   .timeline li { grid-template-columns: 1fr; gap: 2px; padding-left: 30px; }
   .timeline li::before { left: 1px; }
-  .timeline .date { text-align: left; }
+  .timeline .date { text-align: left; white-space: normal; }
 }
 
 /* ---------- Flow ---------- */
