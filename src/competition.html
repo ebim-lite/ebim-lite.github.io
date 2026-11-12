@@ -135,6 +135,14 @@
           <span class="tag">Track 1</span><span class="tag green">[[Deformable Object Manipulation::可變形物體操作]]</span>
           <h3>[[Cable Routing::線纜佈線]]</h3>
           <p class="lead">[[Industrial scenario: path recognition → cable grasping → routing → fixation, on a 20 cm × 20 cm board.::工業情境：路徑辨識 → 線纜抓取 → 佈線 → 固定，於 20 cm × 20 cm 的板上進行。]]</p>
+          <div class="track-summary"><div><small>[[Time limit::時間限制]]</small><b>[[60 min / attempt::每次 60 分鐘]]</b></div><div><small>[[Mode::模式]]</small><b>[[Full autonomy only::僅限全自主]]</b></div><div><small>[[Primary metric::主要指標]]</small><b>[[Completion rate::完成率]]</b></div><div><small>[[Tie-breaker::同分比較]]</small><b>[[Completion time::完成時間]]</b></div></div>
+          <h4>[[Task flow::任務流程]]</h4>
+          <div class="mini-flow">
+            <div><span>1</span>[[Path recognition::路徑辨識]]</div>
+            <div><span>2</span>[[Cable grasping::線纜抓取]]</div>
+            <div><span>3</span>[[Routing::佈線]]</div>
+            <div><span>4</span>[[Fixation::固定]]</div>
+          </div>
           <h4>[[Scenario::任務情境]]</h4>
           <ul>
             <li>[[Route the cable per the given configuration, fixture sequence and direction::依指定的配置、夾具順序與方向完成線纜佈線]]</li>
@@ -149,6 +157,15 @@
             <li><b>[[Primary metric::主要指標]][[: ::：]]</b>[[completion rate (%)::完成率（%）]]</li>
             <li><b>[[Tie-breaker::同分比較]][[: ::：]]</b>[[completion time::完成時間]]</li>
           </ul>
+          <div class="example">
+            <h5>[[Scoring example::計分範例]]</h5>
+            <div class="fixtures">
+              <i class="ok">1</i><i class="ok">2</i><i class="ok">3</i><i class="ok">4</i><i class="ok">5</i><i class="ok">6</i><i class="bad">7</i><i class="void">8</i><i class="void">9</i><i class="void">10</i>
+            </div>
+            <p>[[A board with 10 fixtures. Fixtures 1–6 are routed correctly, #7 is missed, and 8–10 are routed correctly afterwards.::假設板上有 10 個夾具：第 1–6 個正確，第 7 個錯誤，之後第 8–10 個雖然正確。]]</p>
+            <p><b>Prefix = 6 → [[completion rate::完成率]] = 6 ÷ 10 = 60%</b>[[. Fixtures 8–10 do not count.::，第 8–10 個不計分。]]</p>
+            <p class="ex-note">[[Illustrative example only. Official details will be in the rulebook.::僅為示意範例，正式細節以規則手冊為準。]]</p>
+          </div>
         </div>
         <div>
           <figure class="fig"><img src="{{root}}img/track1-cable-routing.jpg" alt="[[Dual SO-101 robot routing a red cable on a fixture board::雙 SO-101 機器人在夾具板上佈紅色線纜]]" loading="lazy" /><figcaption>[[Cable routing on the EBiM-Lite platform::EBiM-Lite 平台上的線纜佈線]]</figcaption></figure>
@@ -165,6 +182,7 @@
           <span class="tag">Track 2</span><span class="tag green">[[Precision Placement::精密放置]]</span>
           <h3>[[Thermal Pad Pick-and-Place::導熱墊取放]]</h3>
           <p class="lead">[[Industrial electronics manufacturing: Thermal Interface Material (TIM) assembly benchmark.::工業電子製造情境：導熱介面材料（TIM）組裝 Benchmark。]]</p>
+          <div class="track-summary"><div><small>[[Targets::目標]]</small><b>[[3 memory modules (random)::3 條記憶體模組（隨機）]]</b></div><div><small>[[Mode::模式]]</small><b>[[Full autonomy only::僅限全自主]]</b></div><div><small>[[Primary metric::主要指標]]</small><b>P × O × IoU</b></div><div><small>[[Then::其次]]</small><b>[[Raw IoU → time::原始 IoU → 時間]]</b></div></div>
           <h4>[[Scenario::任務情境]]</h4>
           <ul>
             <li>[[Pick a thermal pad and place it on a randomly assigned target::夾取一片導熱墊，放到隨機指定的目標上]]</li>
@@ -180,6 +198,21 @@
             <li><b>[[Secondary metric::次要指標]][[: ::：]]</b>[[raw IoU::原始 IoU]]</li>
             <li><b>[[Tie-breaker::同分比較]][[: ::：]]</b>[[completion time::完成時間]]</li>
           </ul>
+          <div class="example">
+            <h5>[[Scoring examples::計分範例]]</h5>
+            <div class="table-wrap" style="box-shadow:none">
+              <table>
+                <thead><tr><th>P</th><th>O</th><th>IoU</th><th>[[Score::分數]]</th></tr></thead>
+                <tbody>
+                  <tr><td>[[✓ picked::✓ 夾取成功]]</td><td>[[✓ correct::✓ 方向正確]]</td><td>0.85</td><td><b>0.85</b></td></tr>
+                  <tr><td>[[✓ picked::✓ 夾取成功]]</td><td>[[✗ wrong::✗ 方向錯誤]]</td><td>0.90</td><td><b>0</b></td></tr>
+                  <tr><td>[[✗ failed::✗ 夾取失敗]]</td><td>—</td><td>—</td><td><b>0</b></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p style="margin-top:10px">[[If two teams tie on P × O × IoU, raw IoU decides, then completion time.::若兩隊 P × O × IoU 同分，先比原始 IoU，再比完成時間。]]</p>
+            <p class="ex-note">[[Illustrative example only. Official details will be in the rulebook.::僅為示意範例，正式細節以規則手冊為準。]]</p>
+          </div>
         </div>
         <div>
           <figure class="fig"><img src="{{root}}img/track2-thermal-pad.jpg" alt="[[Robot picking a thermal pad next to three memory modules::機器人在三條記憶體模組旁夾取導熱墊]]" loading="lazy" /><figcaption>[[Thermal pad and three candidate memory modules::導熱墊與三條候選記憶體模組]]</figcaption></figure>
@@ -196,6 +229,7 @@
             <span class="tag">Track 3</span><span class="tag green">[[Long-Horizon Embodied Manipulation::長程具身操作]]</span>
             <h3>[[Service Robot Challenge::服務機器人挑戰]]</h3>
             <p class="lead">[[Full service cycle: table setup → bean recovery → cleanup, across the Kitchen, Dining and Garbage Collection areas. Objects: cup, bowl of coffee beans, spoon.::完整服務流程：布置餐桌 → 回收咖啡豆 → 清理，橫跨廚房區、用餐區與垃圾回收區。物品：杯子、一碗咖啡豆、湯匙。]]</p>
+          <div class="track-summary"><div><small>[[Max score::滿分]]</small><b>[[10 pts, 3 stages::10 分，3 階段]]</b></div><div><small>[[Mode::模式]]</small><b>[[Full autonomy only::僅限全自主]]</b></div><div><small>[[Ranked by::排名依據]]</small><b>[[Highest completed stage::完成的最高階段]]</b></div><div><small>[[Then::其次]]</small><b>[[Total score → time::總分 → 時間]]</b></div></div>
             <h4>[[Stages &amp; scoring (max 10 pts)::階段與配分（滿分 10 分）]]</h4>
             <div class="score-bar">
               <div style="flex:3">[[Setup · 3::布置 · 3]]</div>
@@ -208,6 +242,22 @@
               <li>[[Total score::總分]]</li>
               <li>[[Completion time::完成時間]]</li>
             </ol>
+            <div class="example">
+              <h5>[[Scoring example::計分範例]]</h5>
+              <div class="table-wrap" style="box-shadow:none">
+                <table>
+                  <thead><tr><th>[[Stage::階段]]</th><th>[[Result::結果]]</th><th>[[Points::得分]]</th></tr></thead>
+                  <tbody>
+                    <tr><td>[[1 · Table Setup::1 · 布置餐桌]]</td><td>[[All objects at their targets::所有物品都到達目標]]</td><td>3</td></tr>
+                    <tr><td>[[2 · Bean Recovery::2 · 回收咖啡豆]]</td><td>[[90% of the bean mass recovered::回收 90% 的咖啡豆重量]]</td><td>4 × 90% = 3.6</td></tr>
+                    <tr><td>[[3 · Cleanup::3 · 清理]]</td><td>[[2 of 3 objects in the sink region::3 件中有 2 件放進水槽區域]]</td><td>2</td></tr>
+                    <tr><td colspan="2"><b>[[Total::總分]]</b></td><td><b>8.6 / 10</b></td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <p style="margin-top:10px">[[Teams are compared first by the highest completed stage, then by total score, then by completion time.::排名時先比完成的最高階段，再比總分，最後比完成時間。]]</p>
+              <p class="ex-note">[[Illustrative example only. Official details will be in the rulebook.::僅為示意範例，正式細節以規則手冊為準。]]</p>
+            </div>
           </div>
           <figure class="fig"><img src="{{root}}img/arena-overview.jpg" alt="[[Service arena overview::服務場地全景]]" loading="lazy" /><figcaption>[[Kitchen, Dining and Garbage Collection areas::廚房區、用餐區與垃圾回收區]]</figcaption></figure>
         </div>
