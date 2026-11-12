@@ -12,7 +12,7 @@ import re
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-SITE_URL = 'https://casear.github.io/ebim-lite-2026/'
+SITE_URL = 'https://ebim-lite.github.io/'
 ASSET_VERSION = '5'
 
 LANGS = {

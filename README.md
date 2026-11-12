@@ -2,7 +2,7 @@
 
 Static bilingual website (English / 繁體中文) for **EBiM-Lite 2026**, the Embodied Bimanual Manipulation Competition (dual SO-101 adaptation).
 
-Live: https://casear.github.io/ebim-lite-2026/ (繁中: `/zh-tw/`)
+Live: https://ebim-lite.github.io/ (繁中: `/zh-tw/`)
 
 ## How to edit
 
