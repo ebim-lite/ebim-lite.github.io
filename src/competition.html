@@ -1,0 +1,448 @@
+  <header class="hero small">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">[[Home::首頁]]</a> / [[Competition::競賽]]</div>
+      <h1>[[The EBiM-Lite <span class="grad">Competition</span>::EBiM-Lite <span class="grad">競賽</span>]]</h1>
+      <p class="subtitle">[[Three tracks on a low-cost mobile bimanual robot, evaluated with full autonomy from Isaac Sim to the real world.::在低成本移動式雙臂機器人上進行三個賽道，從 Isaac Sim 到真實世界，全程以全自主方式評測。]]</p>
+      <div class="btn-row" style="margin-bottom:28px">
+        <a class="btn btn-primary" href="register.html">[[Register::報名]]</a>
+        <a class="btn btn-ghost" href="#code">[[Get the Code::取得程式碼]]</a>
+      </div>
+      <div class="toc">
+        <a href="#why">[[Why this benchmark::為什麼辦這個競賽]]</a>
+        <a href="#compare">[[EBiM vs EBiM-Lite::EBiM 與 Lite 比較]]</a>
+        <a href="#mechanism">[[Three-stage mechanism::三階段機制]]</a>
+        <a href="#benchmark">[[The benchmark::Benchmark 設計]]</a>
+        <a href="#tracks">[[Tasks::賽道任務]]</a>
+        <a href="#platform">[[Platform::平台]]</a>
+        <a href="#arena">[[Arena::場地]]</a>
+        <a href="#sites">[[Validation sites::驗證站]]</a>
+        <a href="#architecture">[[Architecture::競賽架構]]</a>
+        <a href="#participation">[[Participation::參賽辦法]]</a>
+        <a href="#timeline">[[Timeline::時程]]</a>
+        <a href="#code">[[Get the code::取得程式碼]]</a>
+        <a href="#submission">[[Submission::提交方式]]</a>
+        <a href="#awards">[[Awards::獎項]]</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- WHY -->
+  <section id="why">
+    <div class="container">
+      <div class="section-head reveal" style="max-width:860px">
+        <div class="kicker">[[Why this benchmark::為什麼辦這個競賽]]</div>
+        <h2>[[Physical AI learning and development for all university and industry learners::讓所有大學與產業學習者都能投入 Physical AI 的學習與開發]]</h2>
+        <p>[[EBiM-Lite is the dual SO-101 adaptation of the EBiM (Embodied Bimanual Manipulation) benchmark. It adapts the three tracks of
+          the full benchmark and runs them on open-source, low-cost hardware so that more university teams can take part.
+          Teams learn in simulation, then the best policies are validated across sites and evaluated on real robots.::EBiM-Lite 是 EBiM（具身雙臂操作）Benchmark 的雙 SO-101 版本。它改編完整版的三個賽道，
+          並改用開源低成本硬體，讓更多大學團隊能參加。隊伍先在模擬中學習，表現最好的策略再經跨站驗證，最後在真實機器人上評測。]]</p>
+      </div>
+      <div class="grid g3">
+        <div class="card reveal"><div class="icon">{{icon:bot}}</div><h3>[[Full autonomy only::僅限全自主]]</h3><p>[[No teleoperation. Only full autonomy is evaluated.::不可遙控操作，只評全自主運作。]]</p></div>
+        <div class="card reveal"><div class="icon">{{icon:flag}}</div><h3>[[3 tracks, ranked separately::3 個賽道，分開排名]]</h3><p>[[Each track has its own ranking.::每個賽道各自排名。]]</p></div>
+        <div class="card reveal"><div class="icon">{{icon:repeat}}</div><h3>[[Sim → Real::模擬 → 實機]]</h3><p>[[Isaac Sim pre-selection decides who advances to real-robot evaluation.::由 Isaac Sim 初選決定誰晉級實機評測。]]</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARE -->
+  <section id="compare" style="padding-top:0">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="kicker">[[EBiM vs EBiM-Lite::EBiM 與 EBiM-Lite 比較]]</div>
+        <h2>[[How EBiM-Lite differs from the full EBiM benchmark::EBiM-Lite 與完整版 EBiM 的差異]]</h2>
+      </div>
+      <div class="table-wrap reveal">
+        <table>
+          <thead><tr><th></th><th>[[EBiM 2026 (full)::EBiM 2026（完整版）]]</th><th>EBiM-Lite 2026</th></tr></thead>
+          <tbody>
+            <tr><td><b>[[Robot::機器人]]</b></td><td>Mobile FR3 Duo</td><td>[[TurtleBot 4 + 2 × SO-ARM101 (6-DoF)::TurtleBot 4 + 2 × SO-ARM101（六軸）]]</td></tr>
+            <tr><td><b>[[Participants::參賽對象]]</b></td><td>[[Open worldwide::全球開放]]</td><td>[[University and industry learners in Taiwan (10–15 universities, 25+ teams)::台灣的大學與產業學習者（10–15 所大學、25 隊以上）]]</td></tr>
+            <tr><td><b>[[Simulation::模擬]]</b></td><td>Isaac Sim / MuJoCo / Genesis</td><td>Isaac Sim / Isaac Lab</td></tr>
+            <tr><td><b>[[Validation sites::驗證站]]</b></td><td>[[Hamburg, Munich, Shanghai::漢堡、慕尼黑、上海]]</td><td>[[Taipei/Taoyuan, Tainan/Kaohsiung, Hsinchu (TBC)::台北／桃園、台南／高雄、新竹（待確認）]]</td></tr>
+            <tr><td><b>[[Final::決賽]]</b></td><td>[[Real-world validation at partner labs::於合作實驗室進行實機驗證]]</td><td>[[Real-robot final at GTC Taipei, mid-May 2027::2027 年 5 月中 GTC Taipei 實機決賽]]</td></tr>
+            <tr><td><b>[[Arena::場地]]</b></td><td>[[150 cm aisles::150 cm 走道]]</td><td>[[100 cm aisles, Moxboda tables (H 30 cm, Ø 70 cm)::100 cm 走道、Moxboda 圓桌（高 30 cm、直徑 70 cm）]]</td></tr>
+            <tr><td><b>Track 1</b></td><td>[[Cable Routing &amp; Plugging, 30-minute limit::線纜佈線與插接，限時 30 分鐘]]</td><td>[[Cable Routing on a scaled-down 20 × 20 cm board, 60-minute limit::於縮小的 20 × 20 cm 板上佈線，限時 60 分鐘]]</td></tr>
+            <tr><td><b>Track 2</b></td><td>[[Thermal pad placement, P × O × IoU::導熱墊放置，P × O × IoU]]</td><td>[[Same scoring; only 3 memory modules as candidate targets::相同計分；候選目標只有 3 條記憶體模組]]</td></tr>
+            <tr><td><b>Track 3</b></td><td>[[Assisted Living &amp; Feeding: 4 stages incl. feeding, max 16 pts::輔助生活與餵食：含餵食共 4 階段，滿分 16 分]]</td><td>[[Service Robot Challenge: 3 stages (no feeding), max 10 pts::服務機器人挑戰：3 階段（無餵食），滿分 10 分]]</td></tr>
+            <tr><td><b>[[Metrics::指標]]</b></td><td>[[Outcome (ranked) + process + safety gates::結果（排名）+ 過程 + 安全門檻]]</td><td>[[Primary metric + tie-breaker; process/safety metrics TBA::主要指標 + 同分比較；過程與安全指標待公布]]</td></tr>
+            <tr><td><b>[[Resources for teams::隊伍資源]]</b></td><td>[[Compute grants from partners::合作夥伴提供的算力補助]]</td><td>[[DLI courses, Brev credits, GPU hours, DGX Spark/RTX loan, robots for selected teams::DLI 課程、Brev 額度、GPU 時數、DGX Spark/RTX 出借，入選隊伍提供機器人]]</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- MECHANISM -->
+  <section class="alt" id="mechanism">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="kicker">[[Three-stage mechanism::三階段機制]]</div>
+        <h2>[[Simulation → Cross-Site Validation → Real-World Evaluation::模擬 → 跨站驗證 → 實機評測]]</h2>
+      </div>
+      <div class="grid g3">
+        <div class="card stage-card reveal">
+          <div class="num">I</div>
+          <div class="stage-label">[[Simulation::模擬賽]]</div>
+          <div class="when">[[Pre-selection Feb 25 – Mar 25, 2027::初選 2027/02/25 – 03/25]]</div>
+          <p>[[Compete virtually in Isaac Lab on deterministic simulation tasks. 25+ teams.::在 Isaac Lab 以確定性模擬任務線上競賽，25 隊以上。]]</p>
+        </div>
+        <div class="card stage-card reveal">
+          <div class="num">II</div>
+          <div class="stage-label">[[Cross-site validation::跨站驗證]]</div>
+          <div class="when">[[Mar – May 2027::2027/03 – 05]]</div>
+          <p>[[About 10 selected teams get hardware and run offline preliminary rounds at validation sites in Taiwan.::約 10 支入選隊伍取得硬體，在台灣各驗證站進行線下預賽。]]</p>
+        </div>
+        <div class="card stage-card reveal">
+          <div class="num">III</div>
+          <div class="stage-label">[[Real-world final::實機決賽]]</div>
+          <div class="when">[[Mid-May 2027 · GTC Taipei::2027 年 5 月中 · GTC Taipei]]</div>
+          <p>[[Real-robot final, workshop, awards for the top 3 teams and a benchmark report.::實機決賽、工作坊、前三名頒獎與 Benchmark 報告。]] <a href="workshop.html">[[Workshop →::工作坊 →]]</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENCHMARK -->
+  <section id="benchmark">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="kicker">[[The benchmark::Benchmark 設計]]</div>
+        <h2>[[What makes up EBiM-Lite::EBiM-Lite 的組成]]</h2>
+      </div>
+      <div class="grid g3">
+        <div class="card reveal"><div class="num">01</div><h3>[[Task suite::任務組]]</h3><p>[[Cable routing, thermal pad pick-and-place and a long-horizon service cycle.::線纜佈線、導熱墊取放與長程服務流程。]]</p></div>
+        <div class="card reveal"><div class="num">02</div><h3>[[Metrics::評測指標]]</h3><p>[[A primary metric and a tie-breaker per track (see Tasks below).::每個賽道有主要指標與同分比較（見下方賽道任務）。]]</p>
+          <p style="margin:10px 0 0"><span class="tag amber">[[TBA::即將公布]]</span> [[Process and safety metrics, if any, will be published in the rulebook.::若有過程與安全指標，將於規則手冊公布。]]</p></div>
+        <div class="card reveal"><div class="num">03</div><h3>[[Sim-to-real protocol::模擬到實機流程]]</h3><p>[[Same tasks and scoring rules in Isaac Sim and on the real robot.::Isaac Sim 與實機使用相同任務與計分規則。]]</p></div>
+        <div class="card reveal"><div class="num">04</div><h3>[[Low-cost open hardware::低成本開源硬體]]</h3><p>[[Two SO-ARM101 arms on a TurtleBot 4.::TurtleBot 4 搭載兩支 SO-ARM101。]]</p></div>
+        <div class="card reveal"><div class="num">05</div><h3>[[Leaderboard::排行榜]]</h3><p>[[Simulation and real-world results on a leaderboard.::模擬與實機成績都會列在排行榜上。]]</p></div>
+        <div class="card reveal"><div class="num">06</div><h3>[[Benchmark report::Benchmark 報告]]</h3><p>[[A benchmark report is published after the final.::決賽後發表 Benchmark 報告。]]</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRACKS -->
+  <section class="alt" id="tracks">
+    <div class="container">
+      <div class="section-head reveal" style="margin-bottom:0">
+        <div class="kicker">[[Benchmark tasks::賽道任務]]</div>
+        <h2>[[Three tracks::三個賽道]]</h2>
+      </div>
+
+      <div class="task reveal" id="track1">
+        <div>
+          <span class="tag">Track 1</span><span class="tag green">[[Deformable Object Manipulation::可變形物體操作]]</span>
+          <h3>[[Cable Routing::線纜佈線]]</h3>
+          <p class="lead">[[Industrial scenario: path recognition → cable grasping → routing → fixation, on a 20 cm × 20 cm board.::工業情境：路徑辨識 → 線纜抓取 → 佈線 → 固定，於 20 cm × 20 cm 的板上進行。]]</p>
+          <h4>[[Scenario::任務情境]]</h4>
+          <ul>
+            <li>[[Route the cable per the given configuration, fixture sequence and direction::依指定的配置、夾具順序與方向完成線纜佈線]]</li>
+            <li>[[Only full autonomy is evaluated: no teleoperation::只評全自主運作，不可遙控操作]]</li>
+            <li>[[60-minute time limit per attempt::每次嘗試限時 60 分鐘]]</li>
+            <li>[[The task board is scaled down from the full EBiM version::任務板由完整版 EBiM 縮小]]</li>
+          </ul>
+          <h4>[[Scoring::計分方式]]</h4>
+          <div class="formula">[[Completion Rate::完成率]] = Prefix ÷ Total
+            <small>[[Prefix = continuous correct fixtures from the start::Prefix = 從起點開始連續正確的夾具數]]</small></div>
+          <ul>
+            <li><b>[[Primary metric::主要指標]][[: ::：]]</b>[[completion rate (%)::完成率（%）]]</li>
+            <li><b>[[Tie-breaker::同分比較]][[: ::：]]</b>[[completion time::完成時間]]</li>
+          </ul>
+        </div>
+        <div>
+          <figure class="fig"><img src="{{root}}img/track1-cable-routing.jpg" alt="[[Dual SO-101 robot routing a red cable on a fixture board::雙 SO-101 機器人在夾具板上佈紅色線纜]]" loading="lazy" /><figcaption>[[Cable routing on the EBiM-Lite platform::EBiM-Lite 平台上的線纜佈線]]</figcaption></figure>
+          <div class="task-figs">
+            <figure class="fig contain"><img src="{{root}}img/track1-board.jpg" alt="[[Fixture board layout::夾具板配置]]" loading="lazy" /><figcaption>[[Fixture board (ManipulationNet)::夾具板（ManipulationNet）]]</figcaption></figure>
+            <figure class="fig contain"><img src="{{root}}img/track1-sim.jpg" alt="[[Cable routing path in Isaac Sim::Isaac Sim 中的佈線路徑]]" loading="lazy" /><figcaption>[[Routing path in Isaac Sim::Isaac Sim 中的佈線路徑]]</figcaption></figure>
+            <figure class="fig wide"><img src="{{root}}img/track1-fixtures.png" alt="[[Fixture types::夾具種類]]" loading="lazy" style="padding:8px" /><figcaption>[[Fixture types::夾具種類]]</figcaption></figure>
+          </div>
+        </div>
+      </div>
+
+      <div class="task reveal" id="track2">
+        <div>
+          <span class="tag">Track 2</span><span class="tag green">[[Precision Placement::精密放置]]</span>
+          <h3>[[Thermal Pad Pick-and-Place::導熱墊取放]]</h3>
+          <p class="lead">[[Industrial electronics manufacturing: Thermal Interface Material (TIM) assembly benchmark.::工業電子製造情境：導熱介面材料（TIM）組裝 Benchmark。]]</p>
+          <h4>[[Scenario::任務情境]]</h4>
+          <ul>
+            <li>[[Pick a thermal pad and place it on a randomly assigned target::夾取一片導熱墊，放到隨機指定的目標上]]</li>
+            <li>[[Only 3 memory modules are used as candidate targets::候選目標只有 3 條記憶體模組]]</li>
+            <li>[[Keep correct orientation: wrong orientation scores 0::必須保持正確方向：方向錯誤即得 0 分]]</li>
+            <li>[[Placement accuracy scored by IoU (0.0 – 1.0)::放置精度以 IoU（0.0 – 1.0）計分]]</li>
+          </ul>
+          <h4>[[Scoring::計分方式]]</h4>
+          <div class="formula">[[Score::分數]] = P × O × IoU
+            <small>[[Pick success × Orientation × IoU::夾取成功 × 方向正確 × IoU]]</small></div>
+          <ul>
+            <li><b>[[Primary metric::主要指標]][[: ::：]]</b>P × O × IoU</li>
+            <li><b>[[Secondary metric::次要指標]][[: ::：]]</b>[[raw IoU::原始 IoU]]</li>
+            <li><b>[[Tie-breaker::同分比較]][[: ::：]]</b>[[completion time::完成時間]]</li>
+          </ul>
+        </div>
+        <div>
+          <figure class="fig"><img src="{{root}}img/track2-thermal-pad.jpg" alt="[[Robot picking a thermal pad next to three memory modules::機器人在三條記憶體模組旁夾取導熱墊]]" loading="lazy" /><figcaption>[[Thermal pad and three candidate memory modules::導熱墊與三條候選記憶體模組]]</figcaption></figure>
+          <div class="task-figs">
+            <figure class="fig contain"><img src="{{root}}img/track2-sim.jpg" alt="[[Simulation assets::模擬素材]]" loading="lazy" /><figcaption>[[Simulation assets::模擬素材]]</figcaption></figure>
+            <figure class="fig contain"><img src="{{root}}img/track2-pad-deform.png" alt="[[Deformable pad model::可變形導熱墊模型]]" loading="lazy" /><figcaption>[[Deformable pad model::可變形導熱墊模型]]</figcaption></figure>
+          </div>
+        </div>
+      </div>
+
+      <div class="task reveal" id="track3" style="grid-template-columns:1fr">
+        <div class="grid g2" style="gap:40px">
+          <div>
+            <span class="tag">Track 3</span><span class="tag green">[[Long-Horizon Embodied Manipulation::長程具身操作]]</span>
+            <h3>[[Service Robot Challenge::服務機器人挑戰]]</h3>
+            <p class="lead">[[Full service cycle: table setup → bean recovery → cleanup, across the Kitchen, Dining and Garbage Collection areas. Objects: cup, bowl of coffee beans, spoon.::完整服務流程：布置餐桌 → 回收咖啡豆 → 清理，橫跨廚房區、用餐區與垃圾回收區。物品：杯子、一碗咖啡豆、湯匙。]]</p>
+            <h4>[[Stages &amp; scoring (max 10 pts)::階段與配分（滿分 10 分）]]</h4>
+            <div class="score-bar">
+              <div style="flex:3">[[Setup · 3::布置 · 3]]</div>
+              <div style="flex:4">[[Bean Recovery · 4::回收咖啡豆 · 4]]</div>
+              <div style="flex:3">[[Cleanup · 3::清理 · 3]]</div>
+            </div>
+            <h4>[[Ranking priority::排名順序]]</h4>
+            <ol class="rank-list">
+              <li>[[Highest completed stage::完成的最高階段]]</li>
+              <li>[[Total score::總分]]</li>
+              <li>[[Completion time::完成時間]]</li>
+            </ol>
+          </div>
+          <figure class="fig"><img src="{{root}}img/arena-overview.jpg" alt="[[Service arena overview::服務場地全景]]" loading="lazy" /><figcaption>[[Kitchen, Dining and Garbage Collection areas::廚房區、用餐區與垃圾回收區]]</figcaption></figure>
+        </div>
+        <div class="stage-figs">
+          <div class="card">
+            <div class="track-img"><img src="{{root}}img/track3-stage1.jpg" alt="[[Stage 1: table setup::Stage 1：布置餐桌]]" loading="lazy" /></div>
+            <span class="tag">[[Stage 1 · 3 pts::Stage 1 · 3 分]]</span>
+            <h3>[[Table Setup::布置餐桌]]</h3>
+            <ul>
+              <li>[[Transport cup, bowl (with coffee beans) and spoon from Kitchen to Dining Area::把杯子、碗（裝有咖啡豆）與湯匙從廚房區送到用餐區]]</li>
+              <li>[[Three randomly assigned targets: one for the cup, one adjacent to the robot head for bowl and spoon::三個隨機指定的目標：一個放杯子，碗與湯匙放在機器人頭部旁]]</li>
+              <li>[[Stage complete when every object sits at its assigned location::所有物品都到達指定位置即完成此階段]]</li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="track-img"><img src="{{root}}img/track3-stage2.jpg" alt="[[Stage 2: bean recovery::Stage 2：回收咖啡豆]]" loading="lazy" /></div>
+            <span class="tag green">[[Stage 2 · 4 pts::Stage 2 · 4 分]]</span>
+            <h3>[[Bean Recovery::回收咖啡豆]]</h3>
+            <ul>
+              <li>[[Transfer the coffee beans from the bowl into the recycling container in the Garbage Collection Area::把碗中的咖啡豆倒入垃圾回收區的回收容器]]</li>
+              <li>[[Container sits on a scale; Recovery Ratio = recovered mass ÷ original mass::容器放在秤上；回收率 = 回收重量 ÷ 原始重量]]</li>
+              <li>[[Points awarded proportionally (100% → full points, 90% → 90%, 80% → 80%)::依比例給分（100% → 滿分、90% → 90%、80% → 80%）]]</li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="track-img"><img src="{{root}}img/track3-stage3.jpg" alt="[[Stage 3: cleanup::Stage 3：清理]]" loading="lazy" /></div>
+            <span class="tag amber">[[Stage 3 · 3 pts::Stage 3 · 3 分]]</span>
+            <h3>[[Cleanup::清理]]</h3>
+            <ul>
+              <li>[[Return cup, bowl and spoon to the Kitchen Area::把杯子、碗與湯匙送回廚房區]]</li>
+              <li>[[Place each inside the sink region: the black rectangle on the countertop::逐一放進水槽區域：流理台上的黑色矩形]]</li>
+              <li>[[1 point per object inside the sink region::每放進一件得 1 分]]</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PLATFORM -->
+  <section class="dark" id="platform">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="kicker">[[Competition platform::競賽平台]]</div>
+        <h2>[[Low-cost mobile bimanual robot::低成本移動式雙臂機器人]]</h2>
+        <p>[[Two SO-ARM101 arms on a TurtleBot 4. Open-source hardware and software lower the barrier for university teams,
+          and the compact footprint suits the 100 cm aisles and 30 cm tables of the EBiM-Lite arena.::TurtleBot 4 搭載兩支 SO-ARM101。開源軟硬體降低大學團隊的參賽門檻，
+          精簡的體積也適合 EBiM-Lite 場地的 100 cm 走道與 30 cm 桌面。]]</p>
+      </div>
+      <div class="grid g2" style="gap:32px;align-items:start">
+        <figure class="fig reveal"><img src="{{root}}img/platform.jpg" alt="[[Prototype and render of the platform::平台實體原型與渲染]]" loading="lazy" /><figcaption>[[Prototype (left) and design render (right)::實體原型（左）與設計渲染（右）]]</figcaption></figure>
+        <div class="spec reveal">
+          <div><small>[[Arms::手臂]]</small><b>[[2 × SO-ARM101, 6-DoF::2 × SO-ARM101，六軸]]</b></div>
+          <div><small>[[End effectors::末端執行器]]</small><b>[[Parallel grippers::平行夾爪]]</b></div>
+          <div><small>[[Arm sensing::手臂感測]]</small><b>[[Wrist cameras::腕部相機]]</b></div>
+          <div><small>[[Mobile base::移動底盤]]</small><b>TurtleBot 4 (iRobot Create 3)</b></div>
+          <div><small>[[Base sensing::底盤感測]]</small><b>[[OAK-D camera + lidar::OAK-D 相機 + 光達]]</b></div>
+          <div><small>[[Simulation::模擬]]</small><b>Isaac Sim / Isaac Lab</b></div>
+          <div><small>[[Onboard compute::機上運算]]</small><b>[[Jetson AGX Orin (TBC)::Jetson AGX Orin（待確認）]]</b></div>
+          <div><small>[[Rules::規則]]</small><b>[[3 tracks adapted from full EBiM::改編自完整版 EBiM 的 3 個賽道]]</b></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARENA -->
+  <section id="arena">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="kicker">[[Task arena::競賽場地]]</div>
+        <h2>[[A smaller arena for a smaller robot::小機器人，配上縮小的場地]]</h2>
+      </div>
+      <div class="grid g3" style="margin-bottom:32px">
+        <div class="card reveal"><div class="icon">{{icon:table}}</div><h3>[[Tables::桌子]]</h3><p>[[Each table switches to a Moxboda, 30 cm high with 70 cm diameter.::每張桌子改為 Moxboda 圓桌，高 30 cm、直徑 70 cm。]]</p></div>
+        <div class="card reveal"><div class="icon">{{icon:arrows}}</div><h3>[[Aisles::走道]]</h3><p>[[All aisles shrink from 150 cm to 100 cm.::所有走道由 150 cm 縮小為 100 cm。]]</p></div>
+        <div class="card reveal"><div class="icon">{{icon:bot}}</div><h3>[[Robot::機器人]]</h3><p>[[The robot switches to the low-cost dual SO-101 platform.::機器人改為低成本的雙 SO-101 平台。]]</p></div>
+      </div>
+      <div class="grid g2 reveal" style="margin-bottom:20px">
+        <figure class="fig"><img src="{{root}}img/arena-wide.jpg" alt="[[Arena overview::場地全景]]" loading="lazy" /><figcaption>[[Arena overview::場地全景]]</figcaption></figure>
+        <figure class="fig contain"><img src="{{root}}img/arena-floorplan.png" alt="[[Floor plan::平面圖]]" loading="lazy" /><figcaption>[[Floor plan::平面圖]]</figcaption></figure>
+      </div>
+      <div class="grid g3 reveal">
+        <figure class="fig cover"><img src="{{root}}img/arena-render-1.jpg" alt="[[Arena render::場地渲染]]" loading="lazy" /><figcaption>[[Arena render::場地渲染]]</figcaption></figure>
+        <figure class="fig cover"><img src="{{root}}img/arena-render-2.jpg" alt="[[Arena render::場地渲染]]" loading="lazy" /><figcaption>[[Arena render::場地渲染]]</figcaption></figure>
+        <figure class="fig contain"><img src="{{root}}img/arena-table.jpg" alt="[[Moxboda table::Moxboda 圓桌]]" loading="lazy" /><figcaption>[[Moxboda table · H 30 cm · Ø 70 cm::Moxboda 圓桌 · 高 30 cm · 直徑 70 cm]]</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- SITES -->
+  <section class="alt" id="sites">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="kicker">[[On-site validation::現地驗證]]</div>
+        <h2>[[Validation sites::驗證站]]</h2>
+        <p>[[Site details (venues, operations leads, opening hours) will be announced.::各站的場地、負責人與開放時間將另行公布。]]</p>
+      </div>
+      <div class="grid g3">
+        <div class="card reveal"><div class="icon">{{icon:pin}}</div><h3>[[Taipei / Taoyuan::台北／桃園]]</h3><p><span class="tag amber">[[Venue TBA::場地待公布]]</span></p></div>
+        <div class="card reveal"><div class="icon">{{icon:pin}}</div><h3>[[Hsinchu::新竹]]</h3><p><span class="tag amber">[[TBC::待確認]]</span></p></div>
+        <div class="card reveal"><div class="icon">{{icon:pin}}</div><h3>[[Tainan / Kaohsiung::台南／高雄]]</h3><p><span class="tag amber">[[Venue TBA::場地待公布]]</span></p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARCHITECTURE -->
+  <section class="dark" id="architecture">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="kicker">[[Competition architecture::競賽架構]]</div>
+        <h2>[[From learning to the real final::從學習到實機決賽]]</h2>
+      </div>
+      <div class="pillars reveal">
+        <div class="card"><div class="icon">{{icon:book}}</div><h3>[[Learning::學習]]</h3><ul><li>[[DLI workshops and self-paced training::DLI 工作坊與自學課程]]</li><li>GitHub</li><li>[[Docs::文件]]</li></ul></div>
+        <div class="card"><div class="icon">{{icon:monitor}}</div><h3>[[Simulation::模擬]]</h3><ul><li>[[Tasks: Cable Routing, Thermal Pad Pick-and-Place, Service Robot Challenge::任務：線纜佈線、導熱墊取放、服務機器人挑戰]]</li><li>[[Engine: Isaac Sim::引擎：Isaac Sim]]</li></ul></div>
+        <div class="card"><div class="icon">{{icon:cpu}}</div><h3>[[Computing resources::算力資源]]</h3><ul><li>RTX 5080</li><li>RTX / DGX Spark</li><li>[[DLI for learning::DLI 學習]]</li><li>Brev</li><li>[[Jetson AGX Orin (TBC)::Jetson AGX Orin（待確認）]]</li></ul></div>
+        <div class="card"><div class="icon">{{icon:pin}}</div><h3>[[On-site validation::現地驗證]]</h3><ul><li>[[Taipei / Taoyuan::台北／桃園]]</li><li>[[Tainan / Kaohsiung::台南／高雄]]</li><li>[[Hsinchu (TBC)::新竹（待確認）]]</li></ul></div>
+        <div class="card"><div class="icon">{{icon:trophy}}</div><h3>[[Finals &amp; results::決賽與結果]]</h3><ul><li>[[Leaderboard::排行榜]]</li><li>[[Real finals::實機決賽]]</li><li>[[Workshop::工作坊]]</li><li>[[Awards::頒獎]]</li><li>[[Benchmark report::Benchmark 報告]]</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTICIPATION -->
+  <section id="participation">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="kicker">[[Call for participation::參賽辦法]]</div>
+        <h2>[[Who can join and how::誰可以參加、如何參加]]</h2>
+      </div>
+      <div class="grid g2" style="margin-bottom:20px">
+        <div class="card reveal">
+          <h3>[[Stage I · Simulation::Stage I · 模擬賽]]</h3>
+          <ul>
+            <li>[[Open to university and industry learners::開放大學與產業學習者參加]]</li>
+            <li>[[Application deadline: <b>Dec 21, 2026</b>::報名截止：<b>2026/12/21</b>]]</li>
+            <li>[[NVIDIA learning materials and Brev credits for all teams::所有隊伍皆可取得 NVIDIA 學習教材與 Brev 額度]]</li>
+            <li>[[Simulation pre-selection: <b>Feb 25 – Mar 25, 2027</b>::模擬初選：<b>2027/02/25 – 03/25</b>]]</li>
+          </ul>
+        </div>
+        <div class="card reveal">
+          <h3>[[Stage II · Selected teams::Stage II · 入選隊伍]]</h3>
+          <ul>
+            <li>[[About 10 teams selected from simulation results::依模擬成績選出約 10 隊]]</li>
+            <li>[[DGX Spark or RTX machine lent; limited SO-101 arms provided::出借 DGX Spark 或 RTX 機器；提供數量有限的 SO-101 機械臂]]</li>
+            <li>[[Offline preliminary rounds at validation sites::於各驗證站進行線下預賽]]</li>
+            <li>[[Real-robot final at <b>GTC Taipei, mid-May 2027</b>::實機決賽於 <b>2027 年 5 月中 GTC Taipei</b>]]</li>
+          </ul>
+        </div>
+      </div>
+      <div class="placeholder reveal">
+        <span class="status-pill">[[To be announced::即將公布]]</span>
+        <h3>[[Eligibility details::參賽資格細節]]</h3>
+        <p>[[Team size, entry fee, team naming rules and how many tracks a team may enter will be published in the rulebook.::每隊人數、報名費、隊名規則，以及一隊可報名幾個賽道，將於規則手冊公布。]]</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="alt" id="timeline">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="kicker">[[Timeline::時程]]</div>
+        <h2>[[Competition timeline::競賽時程]]</h2>
+      </div>
+      <div class="table-wrap reveal">
+        <table>
+          <thead><tr><th>[[Event::項目]]</th><th>[[Date::日期]]</th></tr></thead>
+          <tbody>
+            <tr><td>[[Official announcement::正式公告]]</td><td>[[Nov 20, 2026::2026/11/20]]</td></tr>
+            <tr><td>[[Application deadline::報名截止]]</td><td>[[Dec 21, 2026::2026/12/21]]</td></tr>
+            <tr><td>[[Stage I simulation (compute Phase I/II)::Stage I 模擬賽（算力 Phase I/II）]]</td><td>[[Dec 2026 – Mar 2027::2026/12 – 2027/03]]</td></tr>
+            <tr><td>[[Simulation pre-selection::模擬初選]]</td><td>[[Feb 25 – Mar 25, 2027::2027/02/25 – 03/25]]</td></tr>
+            <tr><td>[[Stage II selected teams (compute Phase III)::Stage II 入選隊伍（算力 Phase III）]]</td><td>[[Mar – May 2027::2027/03 – 05]]</td></tr>
+            <tr><td>[[Real-robot final @ GTC Taipei::實機決賽 @ GTC Taipei]]</td><td>[[Mid-May 2027::2027 年 5 月中]]</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- CODE -->
+  <section id="code">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="kicker">[[Get the code::取得程式碼]]</div>
+        <h2>[[Simulation environments &amp; starter code::模擬環境與範例程式]]</h2>
+      </div>
+      <div class="placeholder reveal">
+        <div class="icon">{{icon:github}}</div>
+        <span class="status-pill">[[Coming soon::即將公布]]</span>
+        <h3>[[GitHub repository::GitHub Repository]]</h3>
+        <p>[[The Isaac Lab task environments, robot assets, documentation and baseline code will be released on GitHub.::Isaac Lab 任務環境、機器人素材、文件與 baseline 程式將於 GitHub 釋出。]]</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUBMISSION -->
+  <section class="alt" id="submission" style="padding-top:0">
+    <div class="container" style="padding-top:80px">
+      <div class="section-head reveal">
+        <div class="kicker">[[Submission::提交方式]]</div>
+        <h2>[[How to submit::如何提交]]</h2>
+      </div>
+      <div class="placeholder reveal">
+        <div class="icon">{{icon:send}}</div>
+        <span class="status-pill">[[To be announced::即將公布]]</span>
+        <h3>[[Submission format &amp; rules::提交格式與規則]]</h3>
+        <p>[[The submission format, packaging requirements and rules for the simulation pre-selection will be published before Feb 25, 2027.::模擬初選的提交格式、封裝要求與規則，將於 2027/02/25 前公布。]]</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- AWARDS -->
+  <section id="awards">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="kicker">[[Awards &amp; prizes::獎項]]</div>
+        <h2>[[Final prizes for the top 3 teams::決賽前三名獲獎]]</h2>
+      </div>
+      <div class="grid g3" style="margin-bottom:20px">
+        <div class="card reveal" style="text-align:center"><div class="icon" style="margin-inline:auto">{{icon:trophy}}</div><h3>[[1st place::第一名]]</h3><p><span class="tag amber">[[TBA::即將公布]]</span></p></div>
+        <div class="card reveal" style="text-align:center"><div class="icon" style="margin-inline:auto">{{icon:trophy}}</div><h3>[[2nd place::第二名]]</h3><p><span class="tag amber">[[TBA::即將公布]]</span></p></div>
+        <div class="card reveal" style="text-align:center"><div class="icon" style="margin-inline:auto">{{icon:trophy}}</div><h3>[[3rd place::第三名]]</h3><p><span class="tag amber">[[TBA::即將公布]]</span></p></div>
+      </div>
+      <p class="reveal" style="color:var(--text-mid)">[[Prize details, and whether there are special awards, will be announced with the sponsors.::獎金細節與是否設有特別獎，將與贊助商確認後公布。]] <a href="results.html">[[Final results →::決賽結果 →]]</a></p>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="container">
+      <div class="cta reveal">
+        <h2>[[New to robot learning?::第一次接觸機器人學習？]]</h2>
+        <p>[[Start with the NVIDIA DLI courses and the compute resources provided to every team.::從 NVIDIA DLI 課程與每隊都有的算力資源開始。]]</p>
+        <div class="btn-row"><a class="btn btn-primary" href="resources.html">[[Learning &amp; Compute →::學習與算力 →]]</a><a class="btn btn-ghost" href="workshop.html">[[Looking for the Workshop?::工作坊資訊]]</a></div>
+      </div>
+    </div>
+  </section>
