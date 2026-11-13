@@ -14,7 +14,7 @@ import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SITE_URL = 'https://ebim-lite.github.io/'
-GA_ID = ''  # Google Analytics 4 measurement ID (G-XXXXXXXXXX); empty = no tracking
+GA_ID = 'G-GD01VQ840G'  # Google Analytics 4 measurement ID (G-XXXXXXXXXX); empty = no tracking
 ASSET_VERSION = '9'
 
 LANGS = {
