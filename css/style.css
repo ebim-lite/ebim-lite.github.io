@@ -499,3 +499,36 @@ section.dark .placeholder h3 { color: #fff; }
 .fixtures .ok { background: rgba(70, 170, 40, .15); color: #2f8a17; }
 .fixtures .bad { background: rgba(220, 50, 50, .14); color: #c0392b; }
 .fixtures .void { background: var(--bg-light); color: var(--text-muted); text-decoration: line-through; }
+
+/* ---------- Latest news (home) ---------- */
+.news { border: 1px solid var(--border); border-radius: var(--radius); background: #fff; box-shadow: var(--shadow); overflow: hidden; }
+.news-head { padding: 18px 24px; border-bottom: 1px solid var(--border); background: var(--bg-light); }
+.news-head h2 { display: flex; align-items: center; gap: 10px; font-size: 1.25rem; font-weight: 800; margin: 0; }
+.news-head svg { color: var(--accent-dark); }
+.news-list { list-style: none; margin: 0; padding: 0; }
+.news-list li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; padding: 16px 24px; border-bottom: 1px solid var(--border); }
+.news-list li:last-child { border-bottom: 0; }
+.news-list time { font-weight: 700; color: var(--accent-dark); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.news-tag { font-size: .78rem; font-weight: 700; padding: 2px 10px; border-radius: 999px; background: rgba(11, 143, 196, .1); color: var(--accent-dark); white-space: nowrap; }
+.news-list li > span:last-child { flex: 1 1 280px; color: var(--text-dark); }
+.news-list .news-more span { color: var(--text-muted) !important; font-size: .92rem; }
+
+/* ---------- Host / supporting organizations ---------- */
+.units { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.unit-group h3 { font-size: .95rem; font-weight: 700; color: var(--text-mid); margin-bottom: 10px; }
+.logo-slot {
+  height: 96px; display: flex; align-items: center; justify-content: center; border-radius: var(--radius);
+  border: 1.5px dashed var(--border); background: #fff; color: var(--text-muted); font-weight: 600;
+}
+.logo-slot.filled { border-style: solid; color: var(--text-dark); font-size: 1.3rem; font-weight: 800; letter-spacing: .02em; }
+@media (max-width: 860px) { .units { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 460px) { .units { grid-template-columns: 1fr; } }
+
+/* ---------- Traditional Chinese typography ---------- */
+.hero h1 .kw { display: inline-block; }
+html[lang^="zh"] body { font-size: 17px; line-height: 1.8; }
+html[lang^="zh"] h1, html[lang^="zh"] h2, html[lang^="zh"] h3 { line-height: 1.35; letter-spacing: .01em; }
+html[lang^="zh"] .card p, html[lang^="zh"] .card li { font-size: 1rem; line-height: 1.75; }
+html[lang^="zh"] .section-head p { line-height: 1.85; }
+html[lang^="zh"] .section-head .kicker, html[lang^="zh"] .stage-card .stage-label, html[lang^="zh"] .eyebrow { letter-spacing: .08em; }
+html[lang^="zh"] td, html[lang^="zh"] th { line-height: 1.7; }

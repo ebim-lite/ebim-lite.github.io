@@ -13,7 +13,7 @@ import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SITE_URL = 'https://ebim-lite.github.io/'
-ASSET_VERSION = '7'
+ASSET_VERSION = '8'
 
 LANGS = {
     'en': {'dir': '', 'root': '', 'html_lang': 'en', 'idx': 0},
