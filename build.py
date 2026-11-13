@@ -160,6 +160,7 @@ FOOTER = '''<footer>
       </div>
       <div class="bottom">
         <span>© 2026 [[The EBiM-Lite Organizing Committee::EBiM-Lite 籌備委員會]]</span>
+        <span>[[This site uses Google Analytics to count visits.::本網站使用 Google Analytics 統計瀏覽量。]]</span>
         <span>[[Final at GTC Taipei · May 2027::決賽 · GTC Taipei · 2027 年 5 月]]</span>
       </div>
     </div>
@@ -256,6 +257,38 @@ def jsonld(page, lang):
             + json.dumps(data, ensure_ascii=False) + '</script>')
 
 
+def write_404():
+    """GitHub Pages serves /404.html for any missing URL, so it uses absolute paths."""
+    html = f'''<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="utf-8" />
+{ga_snippet()}  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>404 · EBiM-Lite 2026</title>
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
+  <link href="https://fonts.googleapis.com/css2?{FONTS['zh']}&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css?v={ASSET_VERSION}" />
+</head>
+<body>
+  <header class="hero small" style="min-height:100vh;display:flex;align-items:center">
+    <div class="container">
+      <span class="eyebrow">404</span>
+      <h1>找不到這個頁面<br /><span class="grad">Page not found</span></h1>
+      <p class="subtitle">網址可能有誤，或頁面已經移動。<br />The link may be wrong, or the page has moved.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="/zh-tw/">回到中文首頁 →</a>
+        <a class="btn btn-ghost" href="/">English home →</a>
+      </div>
+    </div>
+  </header>
+</body>
+</html>
+'''
+    with open(os.path.join(HERE, '404.html'), 'w', encoding='utf-8') as f:
+        f.write(html)
+
+
 def write_seo_files():
     """sitemap.xml (with hreflang alternates) and robots.txt."""
     rows = []
@@ -336,6 +369,7 @@ def main():
             with open(os.path.join(out_dir, file), 'w', encoding='utf-8') as f:
                 f.write(render(page, lang))
     write_seo_files()
+    write_404()
     print(f'Built {len(PAGES)} pages x {len(LANGS)} languages + sitemap.xml, robots.txt')
 
 
