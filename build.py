@@ -7,6 +7,7 @@ path from the output page to the site root ('' for EN, '../' for zh-tw).
 
     python3 build.py      # writes ./*.html (English) and ./zh-tw/*.html (繁中)
 """
+import json
 import os
 import re
 import sys
@@ -23,9 +24,9 @@ LANGS = {
 # page key -> (file, title, description)
 PAGES = {
     'home': ('index.html',
-             '[[EBiM-Lite 2026 · Embodied Bimanual Manipulation Competition::EBiM-Lite 2026 · 具身雙臂操作競賽]]',
-             '[[EBiM-Lite 2026: a low-cost embodied bimanual manipulation competition on dual SO-101 arms. Isaac Sim pre-selection, real-robot final at GTC Taipei.'
-             '::EBiM-Lite 2026：以雙 SO-101 手臂打造的低成本具身雙臂操作競賽。Isaac Sim 模擬初選，GTC Taipei 實機決賽。]]'),
+             '[[EBiM-Lite 2026 · Embodied Bimanual Manipulation Robot Competition::EBiM-Lite 2026 · 具身雙臂機器人競賽]]',
+             '[[EBiM-Lite 2026 is a bimanual robot competition for university teams: two SO-101 arms on a TurtleBot 4, NVIDIA Isaac Sim pre-selection and a real-robot final at GTC Taipei.'
+             '::EBiM-Lite 2026 是給大學團隊的雙臂機器人競賽：TurtleBot 4 搭載兩支 SO-101 機械臂，先以 NVIDIA Isaac Sim 模擬初選，再到 GTC Taipei 實機決賽。]]'),
     'competition': ('competition.html', '[[Competition::競賽內容]] · EBiM-Lite 2026',
                     '[[EBiM-Lite 2026 tracks, scoring rules, robot platform, arena, submission and awards.::EBiM-Lite 2026 賽道、計分規則、機器人平台、場地、提交方式與獎項。]]'),
     'results': ('results.html', '[[Final Results::決賽結果]] · EBiM-Lite 2026',
@@ -228,6 +229,43 @@ def localize(text, lang):
     return out.replace('{{root}}', LANGS[lang]['root'])
 
 
+def jsonld(page, lang):
+    """WebSite structured data on the home page, so Google can show the site name."""
+    if page != 'home':
+        return ''
+    url = SITE_URL if lang == 'en' else SITE_URL + 'zh-tw/'
+    data = {
+        '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        'name': 'EBiM-Lite 2026',
+        'alternateName': ['EBiM-Lite', 'EBiM Lite Challenge 2026',
+                          '[[Embodied Bimanual Manipulation Competition::具身雙臂操作競賽]]'],
+        'url': url,
+        'inLanguage': LANGS[lang]['html_lang'],
+    }
+    return ('\n  <script type="application/ld+json">'
+            + json.dumps(data, ensure_ascii=False) + '</script>')
+
+
+def write_seo_files():
+    """sitemap.xml (with hreflang alternates) and robots.txt."""
+    rows = []
+    for file, _, _ in PAGES.values():
+        path = '' if file == 'index.html' else file
+        en, zh = SITE_URL + path, SITE_URL + 'zh-tw/' + path
+        alts = (f'<xhtml:link rel="alternate" hreflang="en" href="{en}"/>'
+                f'<xhtml:link rel="alternate" hreflang="zh-Hant" href="{zh}"/>'
+                f'<xhtml:link rel="alternate" hreflang="x-default" href="{en}"/>')
+        for loc in (en, zh):
+            rows.append(f'  <url><loc>{loc}</loc>{alts}</url>')
+    with open(os.path.join(HERE, 'sitemap.xml'), 'w', encoding='utf-8') as f:
+        f.write('<?xml version="1.0" encoding="UTF-8"?>\n'
+                '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" '
+                'xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' + '\n'.join(rows) + '\n</urlset>\n')
+    with open(os.path.join(HERE, 'robots.txt'), 'w', encoding='utf-8') as f:
+        f.write(f'User-agent: *\nAllow: /\n\nSitemap: {SITE_URL}sitemap.xml\n')
+
+
 def render(page, lang):
     file, title, desc = PAGES[page]
     with open(os.path.join(HERE, 'src', file), encoding='utf-8') as f:
@@ -242,7 +280,19 @@ def render(page, lang):
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{title}</title>
   <meta name="description" content="{desc}" />
-  <link rel="icon" href="{root}img/favicon.svg" type="image/svg+xml" />
+  <link rel="canonical" href="{en_url if lang == 'en' else zh_url}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="EBiM-Lite 2026" />
+  <meta property="og:title" content="{title}" />
+  <meta property="og:description" content="{desc}" />
+  <meta property="og:url" content="{en_url if lang == 'en' else zh_url}" />
+  <meta property="og:image" content="{SITE_URL}img/og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="{'en_US' if lang == 'en' else 'zh_TW'}" />
+  <meta property="og:locale:alternate" content="{'zh_TW' if lang == 'en' else 'en_US'}" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="{root}img/favicon.svg" type="image/svg+xml" />{jsonld(page, lang)}
   <link rel="alternate" hreflang="en" href="{en_url}" />
   <link rel="alternate" hreflang="zh-Hant" href="{zh_url}" />
   <link rel="alternate" hreflang="x-default" href="{en_url}" />
@@ -276,7 +326,8 @@ def main():
         for page, (file, _, _) in PAGES.items():
             with open(os.path.join(out_dir, file), 'w', encoding='utf-8') as f:
                 f.write(render(page, lang))
-    print(f'Built {len(PAGES)} pages x {len(LANGS)} languages')
+    write_seo_files()
+    print(f'Built {len(PAGES)} pages x {len(LANGS)} languages + sitemap.xml, robots.txt')
 
 
 if __name__ == '__main__':
