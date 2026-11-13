@@ -14,7 +14,7 @@ import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SITE_URL = 'https://ebim-lite.github.io/'
-GA_ID = 'G-ZDPV4J402J'  # Google Analytics 4 measurement ID
+GA_ID = ''  # Google Analytics 4 measurement ID (G-XXXXXXXXXX); empty = no tracking
 ASSET_VERSION = '9'
 
 LANGS = {
@@ -230,6 +230,14 @@ def localize(text, lang):
     return out.replace('{{root}}', LANGS[lang]['root'])
 
 
+def ga_snippet():
+    if not GA_ID:
+        return ''
+    return (f'  <script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script>\n'
+            "  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}"
+            f"gtag('js',new Date());gtag('config','{GA_ID}');</script>\n")
+
+
 def jsonld(page, lang):
     """WebSite structured data on the home page, so Google can show the site name."""
     if page != 'home':
@@ -278,9 +286,7 @@ def render(page, lang):
 <html lang="{LANGS[lang]['html_lang']}">
 <head>
   <meta charset="utf-8" />
-  <script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('js',new Date());gtag('config','{GA_ID}');</script>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+{ga_snippet()}  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{title}</title>
   <meta name="description" content="{desc}" />
   <link rel="canonical" href="{en_url if lang == 'en' else zh_url}" />
