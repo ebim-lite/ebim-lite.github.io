@@ -37,7 +37,7 @@ After changing `css/style.css` or `js/main.js`, bump `ASSET_VERSION` in `build.p
 ## TODO (waiting for information)
 
 - Registration form link and contact email
-- Organizers, academic host, sponsors (we are still seeking sponsors), prizes
+- Industry sponsors (Jetson, RTX / DGX Spark: in discussion), prizes. Organizer logos come from hidden slide 4 of the deck (img/logos/)
 - GitHub repo for code and submission format, rulebook (eligibility, process and safety metrics)
 - Workshop program, Open Day details, validation site venues
 - Community channels (Discord, chat group, etc.)

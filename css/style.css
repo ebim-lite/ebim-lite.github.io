@@ -513,16 +513,30 @@ section.dark .placeholder h3 { color: #fff; }
 .news-list li > span:last-child { flex: 1 1 280px; color: var(--text-dark); }
 .news-list .news-more span { color: var(--text-muted) !important; font-size: .92rem; }
 
-/* ---------- Host / supporting organizations ---------- */
-.units { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-.unit-group h3 { font-size: .95rem; font-weight: 700; color: var(--text-mid); margin-bottom: 10px; }
-.logo-slot {
-  height: 96px; display: flex; align-items: center; justify-content: center; border-radius: var(--radius);
-  border: 1.5px dashed var(--border); background: #fff; color: var(--text-muted); font-weight: 600;
+/* ---------- Organizers & sponsors ---------- */
+.units-label { font-size: 1rem; font-weight: 700; color: var(--text-mid); margin: 0 0 14px; }
+.org-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-bottom: 36px; }
+.org-card {
+  display: flex; flex-direction: column; align-items: center; text-align: center; gap: 4px;
+  background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 22px 16px; height: 100%;
 }
-.logo-slot.filled { border-style: solid; color: var(--text-dark); font-size: 1.3rem; font-weight: 800; letter-spacing: .02em; }
-@media (max-width: 860px) { .units { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 460px) { .units { grid-template-columns: 1fr; } }
+.org-logo { height: 92px; width: 100%; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; }
+.org-logo img { max-height: 92px; max-width: 90%; object-fit: contain; }
+.org-logo img.wide { max-height: 40px; }
+.org-card b { font-size: .92rem; line-height: 1.4; color: var(--text-dark); }
+.org-uni { font-size: .82rem; color: var(--text-muted); }
+.org-person { font-size: .88rem; color: var(--text-mid); margin-top: 6px; }
+.sponsor-row { display: grid; grid-template-columns: 1fr 1fr; gap: 24px 16px; }
+.sponsor-row > div { display: flex; flex-direction: column; }
+.sponsor-row .org-card { flex: 1; height: auto; }
+.org-card.sponsor { justify-content: center; min-height: 170px; }
+.org-card.sponsor .org-logo img { max-height: 48px; max-width: min(260px, 80%); }
+.org-card.open { border-style: dashed; background: transparent; }
+.org-card.open .status-pill { margin-bottom: 6px; }
+.org-card.open a { margin-top: 8px; font-weight: 600; font-size: .9rem; }
+@media (max-width: 980px) { .org-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 640px) { .org-grid { grid-template-columns: repeat(2, 1fr); } .sponsor-row { grid-template-columns: 1fr; } }
+@media (max-width: 380px) { .org-grid { grid-template-columns: 1fr; } }
 
 /* ---------- Traditional Chinese typography ---------- */
 .hero h1 .kw { display: inline-block; }
