@@ -54,7 +54,7 @@ NAV = [
         ('[[Key Themes::核心主題]]', 'index.html#themes'),
         ('[[Platform::競賽平台]]', 'index.html#platform'),
         ('[[Important Dates::重要日期]]', 'index.html#dates'),
-        ('[[Organizers::主辦團隊]]', 'index.html#organizers'),
+        ('[[Organizers & Sponsors::主辦與贊助單位]]', 'index.html#organizers'),
     ]),
     ('[[Competition::競賽]]', 'competition.html', 'competition', [
         ('[[Why This Benchmark::為什麼辦這個競賽]]', 'competition.html#why'),
@@ -141,7 +141,7 @@ FOOTER = '''<footer>
         <div>
           <h4>[[People::團隊]]</h4>
           <ul>
-            <li><a href="index.html#organizers">[[Organizers::主辦團隊]]</a></li>
+            <li><a href="index.html#organizers">[[Organizers & Sponsors::主辦與贊助單位]]</a></li>
             <li><a href="partners.html">[[Partners::合作夥伴]]</a></li>
           </ul>
         </div>
